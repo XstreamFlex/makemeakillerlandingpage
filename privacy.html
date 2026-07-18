@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Xstream Flex - Vibe Code to Live Sites Instantly</title>
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        xbox: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#107C10', // Authentic Xbox Green
+                            600: '#0f6f0f',
+                            400: '#22c55e',
+                            300: '#4ade80',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Geist', 'Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts for premium feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glow-green {
+            box-shadow: 0 0 20px rgba(16, 124, 16, 0.15);
+        }
+        .dark .glow-green {
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.25);
+        }
+        /* Custom scrollbar for legal document */
+        .terms-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .terms-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .terms-scroll::-webkit-scrollbar-thumb {
+            background: #107C10;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50 min-h-screen flex flex-col">
+
+    <!-- Premium Sticky Header -->
+    <header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                
+                <!-- Logo with Rocket X Icon -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="relative flex items-center justify-center w-10 h-10 rounded-xl bg-xbox-500 text-white transition-all duration-300 group-hover:scale-115 group-hover:rotate-12 glow-green">
+                        <!-- Rocket X SVG Icon -->
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 0M12 21V11m0 0l-3.5 3.5M12 11l3.5 3.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <!-- Orbital Rocket Flame Element -->
+                        <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-amber-500 rounded-full border-2 border-white dark:border-slate-950 animate-ping"></span>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-xbox-600 to-slate-950 dark:from-white dark:via-xbox-400 dark:to-white bg-clip-text text-transparent">
+                        Xstream <span class="text-xbox-500 dark:text-xbox-400">Flex</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#about" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">About</a>
+                    <a href="index.html#features" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">Features</a>
+                    <a href="index.html#interactive-demo" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">Products</a>
+                    <a href="index.html#pricing" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">Pricing Matrix</a>
+                    <a href="index.html#faq" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">FAQ</a>
+                </nav>
+
+                <!-- Action Button & Theme Toggle -->
+                <div class="flex items-center space-x-4">
+                    <!-- Native Theme Toggle Button -->
+                    <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 focus:outline-none transition-all duration-200" aria-label="Toggle dark mode">
+                        <!-- Sun Icon (Visible when in dark mode) -->
+                        <svg id="theme-toggle-sun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+                        </svg>
+                        <!-- Moon Icon (Visible when in light mode) -->
+                        <svg id="theme-toggle-moon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+
+                    <!-- CTA Header Button -->
+                    <a href="index.html#pricing" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-xbox-500 hover:bg-xbox-600 rounded-xl transition-all duration-200 shadow-md hover:shadow-xbox-500/20 glow-green">
+                        Claim LTD Spot
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Urgency Rocket Announcement Banner -->
+    <div class="bg-gradient-to-r from-xbox-600 via-emerald-600 to-cyan-700 text-white py-3 px-4 text-center text-sm font-semibold relative overflow-hidden">
+        <span class="inline-flex items-center">
+            <span class="mr-2 animate-bounce">🚀</span> 
+            <strong>The 2026 Founder's LTD is LIVE:</strong> Grab 15 Genesis Site Credits for $99 once, use forever. No monthly lock-ins!
+            <a href="index.html#pricing" class="underline ml-2 hover:text-lime-200 transition">Lock in Lifetime Pricing &rarr;</a>
+        </span>
+    </div>
+
+    <!-- Main Content Container for Privacy Policy -->
+    <main class="flex-grow">
+        
+        <!-- Header Hero Section -->
+        <section class="relative overflow-hidden py-16 lg:py-24 border-b border-slate-200 dark:border-slate-900 bg-slate-100/50 dark:bg-slate-950/20">
+            <!-- Background Radial Gradients -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,124,16,0.08),transparent_50%)] pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-xbox-100 dark:bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 text-xs sm:text-sm font-bold tracking-wide uppercase border border-xbox-200 dark:border-xbox-500/20 mb-6">
+                    🛡️ Data Security &amp; Developer Sovereignty
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+                    Privacy <span class="bg-gradient-to-r from-xbox-500 to-emerald-500 bg-clip-text text-transparent">Policy</span>
+                </h1>
+                <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light">
+                    Effective date: February 18, 2026. This Privacy Policy details how Xstream Flex processes, secures, and honors your credentials, build data, and personal details.
+                </p>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Content & Interactive Sidebar Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left Sidebar: Sticky Navigation & Search -->
+                <div class="lg:col-span-4 space-y-8">
+                    
+                    <!-- Search Widget -->
+                    <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Search Privacy Clauses</h3>
+                        <div class="relative">
+                            <input type="text" id="terms-search" placeholder="Search keywords..." onkeyup="filterTerms()" class="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-xbox-500 text-slate-800 dark:text-slate-100 placeholder-slate-400" />
+                            <span class="absolute left-3.5 top-3.5 text-slate-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </span>
+                        </div>
+                        <p id="search-status" class="text-[10px] text-xbox-500 font-medium hidden">Filtering items in real-time...</p>
+                    </div>
+
+                    <!-- Sticky Table of Contents -->
+                    <div class="sticky top-28 p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 hidden lg:block">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Document Blueprint</h3>
+                        <nav class="space-y-1 max-h-[400px] overflow-y-auto terms-scroll pr-1">
+                            <a href="#info-collection" class="toc-link block px-3 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-xbox-500 border-l-2 border-transparent transition-all">1. Information We Collect</a>
+                            <a href="#how-we-use" class="toc-link block px-3 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-xbox-500 border-l-2 border-transparent transition-all">2. How We Process Data</a>
+                            <a href="#oauth-handling" class="toc-link block px-3 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-xbox-500 border-l-2 border-transparent transition-all">3. GitHub API &amp; OAuth Scope</a>
+                            <a href="#data-sovereignty" class="toc-link block px-3 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-xbox-500 border-l-2 border-transparent transition-all">4. Code &amp; Content Protection</a>
+                            <a href="#sharing-policies" class="toc-link block px-3 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-xbox-500 border-l-2 border-transparent transition-all">5. Third-Party Disclosures</a>
+                            <a href="#security-protocols" class="toc-link block px-3 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-xbox-500 border-l-2 border-transparent transition-all">6. Security Infrastructure</a>
+                            <a href="#retention-deletion" class="toc-link block px-3 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-xbox-500 border-l-2 border-transparent transition-all">7. Retention &amp; Right to Erasure</a>
+                            <a href="#global-rights" class="toc-link block px-3 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-xbox-500 border-l-2 border-transparent transition-all">8. GDPR, CCPA, &amp; Global Rights</a>
+                            <a href="#cookies-tracking" class="toc-link block px-3 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-xbox-500 border-l-2 border-transparent transition-all">9. Cookies &amp; Telemetry Limits</a>
+                            <a href="#contact-updates" class="toc-link block px-3 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-xbox-500 border-l-2 border-transparent transition-all">10. Updates &amp; Privacy Contact</a>
+                        </nav>
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-500 uppercase tracking-widest">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Zero-Tracking Principles
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Deep-Dive Privacy Policy Clauses -->
+                <div class="lg:col-span-8 space-y-12">
+                    
+                    <!-- Section 1: Information We Collect -->
+                    <div id="info-collection" class="terms-section p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/60 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 rounded-xl bg-xbox-500/10 text-xbox-600 dark:text-xbox-400">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </span>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">1. Information We Collect</h2>
+                        </div>
+                        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-4 font-light">
+                            <p>
+                                Xstream Flex is engineered to respect your operational boundary limits. We compile and push structural layout code directly to GitHub. In this capacity, we only collect data that is essential to authorize and run your platform tasks.
+                            </p>
+                            <p>
+                                <strong>Account Registration Details:</strong> When you subscribe to the Founder's LTD or dynamic hosting upgrades, we store your email address, business profile names, transaction identifiers, and build status parameters.
+                            </p>
+                            <p>
+                                <strong>Transactional Data:</strong> We do not gather or warehouse standard credit card details. All financial transactions are handled securely by PCI-DSS compliant third-party payment gateways (such as Stripe or Lemon Squeezy).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: How We Process Data -->
+                    <div id="how-we-use" class="terms-section p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/60 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 rounded-xl bg-xbox-500/10 text-xbox-600 dark:text-xbox-400">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </span>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">2. How We Process Data</h2>
+                        </div>
+                        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-4 font-light">
+                            <p>
+                                Xstream Flex relies on automated pipeline procedures. We use your stored parameter configurations to complete the following tasks:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-2 text-xs">
+                                <li>Convert structural inputs into formatted static files (HTML, CSS, JSON layouts).</li>
+                                <li>Authenticate with GitHub repositories using OAuth credentials to push updates directly to your site pages.</li>
+                                <li>Route automated notifications to your designated email regarding deployment achievements, errors, or security advisories.</li>
+                                <li>Provide functional operational dashboards, billing portals, and live chat assistance.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: GitHub API & OAuth Scope -->
+                    <div id="oauth-handling" class="terms-section p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/60 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 rounded-xl bg-xbox-500/10 text-xbox-600 dark:text-xbox-400">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </span>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">3. GitHub API &amp; OAuth Scope</h2>
+                        </div>
+                        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-4 font-light">
+                            <p>
+                                To ensure absolute security over your source code ecosystem, our platform handles GitHub permissions with the highest levels of isolation:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-2 text-xs">
+                                <li><strong>Scoped Permissions:</strong> We request OAuth authorizations specifically bounded to the creation, read, and write operations of your specific public and private repositories containing Xstream Flex resources.</li>
+                                <li><strong>Isolation Boundaries:</strong> Our microservices cannot, and will never, browse, inspect, or store repositories, proprietary structures, or external software programs unrelated to Xstream Flex layouts.</li>
+                                <li><strong>Local Authority:</strong> You are the master of your GitHub account. You can revoke token connectivity instantaneously from your GitHub security console at any time without our intervention.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Code & Content Protection -->
+                    <div id="data-sovereignty" class="terms-section p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/60 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 rounded-xl bg-xbox-500/10 text-xbox-600 dark:text-xbox-400">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 009 11V4.708c0-.414-.336-.75-.75-.75h-.348a1 1 0 00-.777.372c-.815 1.002-1.884 1.808-3.1 2.36M12 11a9 9 0 0115 7h-11z" />
+                                </svg>
+                            </span>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">4. Code &amp; Content Protection</h2>
+                        </div>
+                        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-4 font-light">
+                            <p class="font-bold text-slate-800 dark:text-white">
+                                Transient Compile Pipeline.
+                            </p>
+                            <p>
+                                Xstream Flex is not a continuous hosting warehouse. Once our automated node compilers successfully establish structural frameworks and execute the direct commit-push events to your GitHub repository, your source files reside strictly on your personal spaces. 
+                            </p>
+                            <p>
+                                We retain no background copies of your proprietary configurations or customized static code layouts on our servers after deployment operations conclude. You retain 100% intellectual control, code ownership, and personal sovereignty over your properties.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 5: Third-Party Disclosures -->
+                    <div id="sharing-policies" class="terms-section p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/60 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 rounded-xl bg-rose-500/10 text-rose-600">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                            </span>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">5. Third-Party Disclosures</h2>
+                        </div>
+                        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-4 font-light">
+                            <p>
+                                We strictly hold a zero-monetization stance on your details. <strong>We do not sell, barter, or distribute your email addresses, deployment telemetry, or system information to advertising conglomerates, brokerages, or marketing agencies.</strong>
+                            </p>
+                            <p>
+                                Your information is shared with auxiliary subprocessors exclusively to complete your deployment requests:
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono bg-slate-50 dark:bg-slate-950 p-4 rounded-2xl border border-slate-200/60 dark:border-slate-800">
+                                <div class="flex items-center gap-2 text-xbox-600 dark:text-xbox-400">
+                                    <span>⚙️</span> GitHub APIs (Direct Deployments)
+                                </div>
+                                <div class="flex items-center gap-2 text-xbox-600 dark:text-xbox-400">
+                                    <span>⚙️</span> Cloudflare (Proxy and Edge Routing)
+                                </div>
+                                <div class="flex items-center gap-2 text-xbox-600 dark:text-xbox-400">
+                                    <span>⚙️</span> Stripe (Secure Transaction Logs)
+                                </div>
+                                <div class="flex items-center gap-2 text-xbox-600 dark:text-xbox-400">
+                                    <span>⚙️</span> Postmark (Deployment Notifications)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 6: Security Infrastructure -->
+                    <div id="security-protocols" class="terms-section p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/60 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 rounded-xl bg-xbox-500/10 text-xbox-600 dark:text-xbox-400">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                            </span>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">6. Security Infrastructure</h2>
+                        </div>
+                        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-4 font-light">
+                            <p>
+                                We employ industry-standard protocols to shield records from exposure or alteration:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-2 text-xs">
+                                <li>All network integrations leverage secure TLS 1.3 encryption mechanisms in transit.</li>
+                                <li>OAuth tokens are fully encrypted at rest using AES-256 protocols with secure rotation sequences.</li>
+                                <li>We implement strict IP-based system rules and automated rate limit systems on our API endpoints to resist brute-force operations.</li>
+                                <li>Periodic vulnerability scanning runs across our build nodes to isolate and resolve system defects instantly.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Section 7: Retention & Right to Erasure -->
+                    <div id="retention-deletion" class="terms-section p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/60 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 rounded-xl bg-xbox-500/10 text-xbox-600 dark:text-xbox-400">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-16v1a3 3 0 003 3h10a3 3 0 003-3V3a1 1 0 00-1-1h-4z" />
+                                </svg>
+                            </span>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">7. Retention &amp; Right to Erasure</h2>
+                        </div>
+                        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-4 font-light">
+                            <p>
+                                We preserve standard transaction metadata parameters to satisfy global legal guidelines and tax compliance standards. Other operational profile items remain active as long as your LTD setup or subscription services exist.
+                            </p>
+                            <p>
+                                If you wish to execute a permanent deletion (erasure) request, simply dispatch an email to our support team. We will remove your profile details, tokens, and build metadata from our databases within 72 business hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 8: GDPR, CCPA, & Global Rights -->
+                    <div id="global-rights" class="terms-section p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/60 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 rounded-xl bg-xbox-500/10 text-xbox-600 dark:text-xbox-400">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                                </svg>
+                            </span>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">8. GDPR, CCPA, &amp; Global Rights</h2>
+                        </div>
+                        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-4 font-light">
+                            <p>
+                                Regardless of your physical location, Xstream Flex respects your fundamental rights regarding personal data:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-2 text-xs">
+                                <li><strong>Right to Restrict Processing:</strong> You can restrict our processing capabilities by terminating OAuth parameters inside your developer tools panel.</li>
+                                <li><strong>Right to Portability:</strong> Since your built site files live in your GitHub account, your content portfolios remain completely transferable at any time.</li>
+                                <li><strong>Non-Discrimination:</strong> We do not discriminate or charge premium rates if you choose to exercise your CCPA or GDPR data protection choices.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Section 9: Cookies & Telemetry Limits -->
+                    <div id="cookies-tracking" class="terms-section p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/60 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 rounded-xl bg-xbox-500/10 text-xbox-600 dark:text-xbox-400">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4" />
+                                </svg>
+                            </span>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">9. Cookies &amp; Telemetry Limits</h2>
+                        </div>
+                        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-4 font-light">
+                            <p>
+                                Xstream Flex strictly avoids intrusive tracking parameters:
+                            </p>
+                            <p>
+                                We only deploy functional, structural cookies required to process login events, retain active dark mode settings, and verify compliance preferences. We do not integrate behavior trackers or tracking pixels to target advertisements around external web spaces.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 10: Updates & Privacy Contact -->
+                    <div id="contact-updates" class="terms-section p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/60 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 rounded-xl bg-xbox-500/10 text-xbox-600 dark:text-xbox-400">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </span>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">10. Updates &amp; Privacy Contact</h2>
+                        </div>
+                        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-4 font-light">
+                            <p>
+                                We reserve the right to revise this Privacy Policy to ensure alignment with fresh build tools, hosting solutions, and emerging security regulations. If we make structural modifications, we will issue notifications via our core system dashboards or transactional emails.
+                            </p>
+                            <p>
+                                For any questions, data access requests, or system integration feedback, please write directly to our privacy officer at <strong>privacy@xstreamflex.com</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Compliance Verification Block -->
+                    <div class="p-8 rounded-3xl bg-gradient-to-r from-xbox-500/10 via-emerald-500/5 to-cyan-500/10 border border-xbox-500/30 space-y-6">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            <span>✅</span> Privacy Consent Registry
+                        </h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 font-light leading-relaxed">
+                            Need a certified record that your business acknowledged our Privacy Policy? Toggle our interactive signature system below to generate your secure, verifiable 2026 data compliance log.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="compliance-check" onchange="generateComplianceTimestamp()" class="mt-1 h-5 w-5 rounded border-slate-300 bg-white dark:bg-slate-900 text-xbox-500 focus:ring-xbox-500 cursor-pointer" />
+                                <label for="compliance-check" class="text-xs text-slate-600 dark:text-slate-300 select-none cursor-pointer">
+                                    I certify that I represent an active project, solopreneur setup, or developer agency and fully acknowledge the privacy protocols detailed in this document.
+                                </label>
+                            </div>
+
+                            <!-- Verified compliance box -->
+                            <div id="verified-compliance-box" class="hidden p-4 rounded-xl bg-slate-900 text-white border border-slate-800 space-y-2 font-mono text-[10px]">
+                                <div class="flex items-center justify-between text-emerald-400 font-bold">
+                                    <span>STATUS: CONSENT REGISTERED</span>
+                                    <span class="animate-pulse">● SECURED SYNC</span>
+                                </div>
+                                <p><span class="text-slate-400">REGISTRY ID:</span> XSF-PRIV-2026-<span id="comp-random-id">XXXXX</span></p>
+                                <p><span class="text-slate-400">TIMESTAMP:</span> <span id="comp-date">DATE_GOES_HERE</span></p>
+                                <p class="text-slate-500">// Generated under standard European GDPR &amp; Washington State guidelines.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Interactive Footer Section -->
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900 mt-auto transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+                
+                <!-- Footer Identity -->
+                <div class="md:col-span-4 space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-xbox-500 text-white flex items-center justify-center font-bold">
+                            X
+                        </div>
+                        <span class="text-lg font-bold tracking-tight text-white">Xstream Flex</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Filling the void for solo builders. Fast execution without teams or expensive budgets. Deploying professional-grade first impressions, every single time.
+                    </p>
+                    <div class="flex items-center space-x-4 pt-2">
+                        <!-- Github Link -->
+                        <a href="https://github.com" class="hover:text-xbox-500 text-slate-500 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                        </a>
+                        <!-- Twitter/X Link -->
+                        <a href="https://x.com" class="hover:text-xbox-500 text-slate-500 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer Navigation Matrix Links -->
+                <div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+                    
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Launch Products</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a href="index.html#interactive-demo" class="hover:text-white cursor-pointer transition">Xsites Portal</a></li>
+                            <li><a href="index.html#interactive-demo" class="hover:text-white cursor-pointer transition">Sheetany Core</a></li>
+                            <li><a href="index.html#pricing" class="hover:text-white transition">Founder's LTD Spot</a></li>
+                            <li><a href="index.html#about" class="hover:text-white transition">SaaS Architectures</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Core Platform Documentation</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a href="terms.html" class="hover:text-white cursor-pointer transition">Terms of Use (terms.html)</a></li>
+                            <li><a href="privacy.html" class="hover:text-white cursor-pointer transition text-xbox-400 font-semibold">Privacy &amp; Rules (privacy.html)</a></li>
+                            <li><a href="index.html#interactive-demo" class="hover:text-white cursor-pointer transition">Support System</a></li>
+                            <li><a href="index.html#about" class="hover:text-white transition">About Us (about.html)</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Latest Insights</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a href="index.html#about" class="hover:text-white cursor-pointer transition">The "Vibe Coding" Era</a></li>
+                            <li><a href="index.html#about" class="hover:text-white cursor-pointer transition">Indie Dev Tools</a></li>
+                            <li><a href="index.html#about" class="hover:text-white cursor-pointer transition">GitHub Pages Routing</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright / Status bar -->
+            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                <p>&copy; 2026 Xstream Flex Inc. All digital rights reserved. Crafted for solo entrepreneurs globally.</p>
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-slate-500">All Platforms Operating Normally</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Vanilla Javascript Logic System -->
+    <script>
+        // ----------------------------------------------------
+        // Theme Toggle Controller (Sun / Moon)
+        // ----------------------------------------------------
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('theme-toggle-sun');
+        const moonIcon = document.getElementById('theme-toggle-moon');
+
+        // Check user preferences
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            if (sunIcon) sunIcon.classList.remove('hidden');
+            if (moonIcon) moonIcon.classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            if (sunIcon) sunIcon.classList.add('hidden');
+            if (moonIcon) moonIcon.classList.remove('hidden');
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', function() {
+                // Toggle icons
+                if (sunIcon) sunIcon.classList.toggle('hidden');
+                if (moonIcon) moonIcon.classList.toggle('hidden');
+
+                // If is dark mode, set light mode
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            });
+        }
+
+        // ----------------------------------------------------
+        // Search & Filter Terms Logic
+        // ----------------------------------------------------
+        function filterTerms() {
+            const query = document.getElementById('terms-search').value.toLowerCase();
+            const sections = document.getElementsByClassName('terms-section');
+            const searchStatus = document.getElementById('search-status');
+            
+            if (query.length > 0) {
+                if (searchStatus) searchStatus.classList.remove('hidden');
+            } else {
+                if (searchStatus) searchStatus.classList.add('hidden');
+            }
+
+            for (let i = 0; i < sections.length; i++) {
+                const sectionText = sections[i].innerText.toLowerCase();
+                if (sectionText.includes(query)) {
+                    sections[i].style.display = "block";
+                    // Soft glow highlighting search hit
+                    sections[i].classList.add('border-xbox-500/35');
+                } else {
+                    sections[i].style.display = "none";
+                    sections[i].classList.remove('border-xbox-500/35');
+                }
+            }
+        }
+
+        // ----------------------------------------------------
+        // Interactive Compliance Verification logic
+        // ----------------------------------------------------
+        function generateComplianceTimestamp() {
+            const checkbox = document.getElementById('compliance-check');
+            const box = document.getElementById('verified-compliance-box');
+            const randomIdElement = document.getElementById('comp-random-id');
+            const dateElement = document.getElementById('comp-date');
+
+            if (checkbox && checkbox.checked) {
+                if (box) {
+                    box.classList.remove('hidden');
+                    // Generate pseudo random code
+                    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                    let randomResult = '';
+                    for (let i = 0; i < 6; i++) {
+                        randomResult += characters.charAt(Math.floor(Math.random() * characters.length));
+                    }
+                    if (randomIdElement) randomIdElement.innerText = randomResult;
+                    
+                    // Generate exact date
+                    const now = new Date();
+                    if (dateElement) dateElement.innerText = now.toUTCString();
+                }
+            } else {
+                if (box) box.classList.add('hidden');
+            }
+        }
+
+        // ----------------------------------------------------
+        // Sidebar Active TOC Tracking
+        // ----------------------------------------------------
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.terms-section');
+            const navLinks = document.querySelectorAll('.toc-link');
+            
+            let currentActiveId = '';
+            sections.forEach(sec => {
+                const sectionTop = sec.offsetTop;
+                if (pageYOffset >= sectionTop - 180) {
+                    currentActiveId = sec.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('border-xbox-500', 'text-xbox-500', 'bg-slate-100/80', 'dark:bg-slate-900');
+                if (link.getAttribute('href') === `#${currentActiveId}`) {
+                    link.classList.add('border-xbox-500', 'text-xbox-500', 'bg-slate-100/80', 'dark:bg-slate-900');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
