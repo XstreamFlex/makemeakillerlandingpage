@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Ecosystem | Xstream Flex - Vibe Code to Live Sites Instantly</title>
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        xbox: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#107C10', // Authentic Xbox Green
+                            600: '#0f6f0f',
+                            400: '#22c55e',
+                            300: '#4ade80',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Geist', 'Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts for premium feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glow-green {
+            box-shadow: 0 0 20px rgba(16, 124, 16, 0.15);
+        }
+        .dark .glow-green {
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.25);
+        }
+        /* Custom scrollbar for legal/doc layout */
+        .terms-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .terms-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .terms-scroll::-webkit-scrollbar-thumb {
+            background: #107C10;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50 min-h-screen flex flex-col">
+
+    <!-- Premium Sticky Header -->
+    <header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                
+                <!-- Logo with Rocket X Icon -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="relative flex items-center justify-center w-10 h-10 rounded-xl bg-xbox-500 text-white transition-all duration-300 group-hover:scale-115 group-hover:rotate-12 glow-green">
+                        <!-- Rocket X SVG Icon -->
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 0M12 21V11m0 0l-3.5 3.5M12 11l3.5 3.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <!-- Orbital Rocket Flame Element -->
+                        <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-amber-500 rounded-full border-2 border-white dark:border-slate-950 animate-ping"></span>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-xbox-600 to-slate-950 dark:from-white dark:via-xbox-400 dark:to-white bg-clip-text text-transparent">
+                        Xstream <span class="text-xbox-500 dark:text-xbox-400">Flex</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">About</a>
+                    <a href="index.html#features" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">Features</a>
+                    <a href="products.html" class="text-sm font-semibold text-xbox-500 dark:text-xbox-400 transition-colors">Products</a>
+                    <a href="index.html#pricing" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">Pricing Matrix</a>
+                    <a href="index.html#faq" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">FAQ</a>
+                </nav>
+
+                <!-- Action Button & Theme Toggle -->
+                <div class="flex items-center space-x-4">
+                    <!-- Native Theme Toggle Button -->
+                    <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 focus:outline-none transition-all duration-200" aria-label="Toggle dark mode">
+                        <!-- Sun Icon (Visible when in dark mode) -->
+                        <svg id="theme-toggle-sun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+                        </svg>
+                        <!-- Moon Icon (Visible when in light mode) -->
+                        <svg id="theme-toggle-moon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+
+                    <!-- CTA Header Button -->
+                    <a href="index.html#pricing" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-xbox-500 hover:bg-xbox-600 rounded-xl transition-all duration-200 shadow-md hover:shadow-xbox-500/20 glow-green">
+                        Claim LTD Spot
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Urgency Rocket Announcement Banner -->
+    <div class="bg-gradient-to-r from-xbox-600 via-emerald-600 to-cyan-700 text-white py-3 px-4 text-center text-sm font-semibold relative overflow-hidden">
+        <span class="inline-flex items-center">
+            <span class="mr-2 animate-bounce">🚀</span> 
+            <strong>The 2026 Founder's LTD is LIVE:</strong> Grab 15 Genesis Site Credits for $99 once, use forever. No monthly lock-ins!
+            <a href="index.html#pricing" class="underline ml-2 hover:text-lime-200 transition">Lock in Lifetime Pricing &rarr;</a>
+        </span>
+    </div>
+
+    <!-- Main Content Container for Products Page -->
+    <main class="flex-grow">
+        
+        <!-- Premium Product Header Hero -->
+        <section class="relative overflow-hidden py-16 lg:py-24 border-b border-slate-200 dark:border-slate-900 bg-slate-100/50 dark:bg-slate-950/20">
+            <!-- Background Radial Gradients -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,124,16,0.08),transparent_50%)] pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-xbox-100 dark:bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 text-xs sm:text-sm font-bold tracking-wide uppercase border border-xbox-200 dark:border-xbox-500/20 mb-6">
+                    ⚡ Production-Ready Developer Tools
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6">
+                    Sovereign Modules for <span class="bg-gradient-to-r from-xbox-500 to-emerald-500 bg-clip-text text-transparent font-black">Fast Execution</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                    Zero-maintenance software engines engineered specifically for solo builders, developers, and agile startup founders. Click, configure, and stream straight to the web.
+                </p>
+
+                <!-- Filter Controls -->
+                <div class="mt-10 flex flex-wrap justify-center gap-3">
+                    <button onclick="filterProducts('all')" id="filter-btn-all" class="product-filter-btn px-5 py-2.5 rounded-xl text-xs font-bold transition-all border border-xbox-500 bg-xbox-500 text-white shadow-md shadow-xbox-500/10">
+                        All Ecosystem Modules
+                    </button>
+                    <button onclick="filterProducts('sites')" id="filter-btn-sites" class="product-filter-btn px-5 py-2.5 rounded-xl text-xs font-bold transition-all border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-xbox-500">
+                        Static Site Engines
+                    </button>
+                    <button onclick="filterProducts('data')" id="filter-btn-data" class="product-filter-btn px-5 py-2.5 rounded-xl text-xs font-bold transition-all border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-xbox-500">
+                        Serverless Connectors
+                    </button>
+                    <button onclick="filterProducts('api')" id="filter-btn-api" class="product-filter-btn px-5 py-2.5 rounded-xl text-xs font-bold transition-all border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-xbox-500">
+                        Developer APIs
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Cards Showcase -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12" id="products-grid">
+                
+                <!-- Product 1: Xsites Portal -->
+                <div class="product-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-xbox-500/40 relative overflow-hidden" data-category="sites">
+                    <div>
+                        <!-- Badge & Category Header -->
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="px-2.5 py-1 rounded-md bg-xbox-50 dark:bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 text-[10px] font-extrabold tracking-wider uppercase border border-xbox-100 dark:border-xbox-500/15">
+                                Site Builder
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono">ID: XSF-PORTAL</span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                            <span>💻</span> Xsites Portal
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 font-light leading-relaxed mb-6">
+                            Turn raw JSX, markdown templates, or pure HTML files directly into secure, highly optimized production pages in milliseconds. Fully connected to Global Edge CDN node distributions.
+                        </p>
+
+                        <!-- Key Specs List -->
+                        <div class="space-y-3 mb-6 bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200/50 dark:border-slate-800">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">EDGE GENERATION SPEED:</span>
+                                <span class="font-bold text-slate-700 dark:text-slate-300">~ 0.12s globally</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">DEFAULT SECURITY PROTOCOL:</span>
+                                <span class="font-bold text-emerald-500 flex items-center gap-1">🛡️ Auto-SSL (Let's Encrypt)</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">GENESIS CREDITS REQUIRED:</span>
+                                <span class="font-mono font-black text-xbox-500">1 Credit / Site</span>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Simulator Unit Inside Card -->
+                        <div class="p-4 rounded-xl bg-slate-950 text-slate-100 font-mono text-xs space-y-3 mb-6">
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                                <span class="text-[10px] text-xbox-400 font-bold uppercase">⚡ Local Sandbox Engine</span>
+                                <span id="comp-status" class="text-[10px] text-slate-500">Ready</span>
+                            </div>
+                            <div class="space-y-1.5">
+                                <p class="text-[10px] text-slate-400">$ xstream build --project="my-clean-startup"</p>
+                                <div class="w-full bg-slate-900 rounded-full h-2 overflow-hidden">
+                                    <div id="comp-progress-bar" class="bg-xbox-500 h-full w-0 transition-all duration-100"></div>
+                                </div>
+                                <p id="comp-log" class="text-[10px] text-slate-500 italic">Idle terminal awaiting instruction.</p>
+                            </div>
+                            <button type="button" onclick="triggerBuildSimulation()" id="simulate-build-btn" class="w-full py-1.5 rounded bg-xbox-500 text-white font-bold text-[10px] hover:bg-xbox-600 transition">
+                                Execute Simulated Live Build
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                        <a href="index.html#pricing" class="text-xs font-bold text-xbox-500 hover:underline flex items-center gap-1">
+                            Deploy with LTD Spot &rarr;
+                        </a>
+                        <span class="text-xs font-semibold text-slate-400">Includes Custom Domains</span>
+                    </div>
+                </div>
+
+                <!-- Product 2: Sheetany Core -->
+                <div class="product-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-xbox-500/40 relative overflow-hidden" data-category="data">
+                    <div>
+                        <!-- Badge & Category Header -->
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-extrabold tracking-wider uppercase border border-emerald-100 dark:border-emerald-500/15">
+                                Data Integration
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono">ID: XSF-SHEETANY</span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                            <span>📊</span> Sheetany Core
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 font-light leading-relaxed mb-6">
+                            Instantly transform standard spreadsheets (Google Sheets, Notion tables, AirTable, or raw CSVs) into powerful, low-latency API backends. No database configuration necessary.
+                        </p>
+
+                        <!-- Key Specs List -->
+                        <div class="space-y-3 mb-6 bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200/50 dark:border-slate-800">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">API RESPONSE LATENCY:</span>
+                                <span class="font-bold text-slate-700 dark:text-slate-300">~ 22ms average</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">SUPPORTED SOURCE TYPES:</span>
+                                <span class="font-bold text-slate-700 dark:text-slate-300">Sheets, Airtable, Notion DB</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">CACHE PERSISTENCE:</span>
+                                <span class="font-bold text-emerald-500 flex items-center gap-1">🔄 Integrated CDN caching</span>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Live Data Schema Switcher -->
+                        <div class="p-4 rounded-xl bg-slate-950 text-slate-100 font-mono text-xs space-y-3 mb-6">
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                                <span class="text-[10px] text-xbox-400 font-bold uppercase">⚡ REST Endpoint Mock JSON</span>
+                                <span class="text-[10px] text-emerald-400">HTTP 200 OK</span>
+                            </div>
+                            
+                            <div class="flex gap-2">
+                                <button onclick="switchSchema('products')" id="schema-btn-products" class="schema-tab-btn px-2 py-1 rounded bg-slate-800 border border-xbox-500 text-[9px] text-white">GET /products</button>
+                                <button onclick="switchSchema('users')" id="schema-btn-users" class="schema-tab-btn px-2 py-1 rounded bg-slate-900 border border-transparent text-[9px] text-slate-400 hover:text-white">GET /users</button>
+                            </div>
+
+                            <pre id="schema-json-block" class="text-[10px] text-slate-300 bg-slate-900/50 p-2.5 rounded border border-slate-800 overflow-x-auto overflow-y-hidden max-h-24">
+[
+  { "id": 1, "title": "Developer Desk", "price": 499 },
+  { "id": 2, "title": "Ergonomic Chair", "price": 280 }
+]</pre>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                        <a href="index.html#pricing" class="text-xs font-bold text-xbox-500 hover:underline flex items-center gap-1">
+                            Deploy with LTD Spot &rarr;
+                        </a>
+                        <span class="text-xs font-semibold text-slate-400">Up to 50k requests / month</span>
+                    </div>
+                </div>
+
+                <!-- Product 3: GridAPI Engine -->
+                <div class="product-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-xbox-500/40 relative overflow-hidden" data-category="api">
+                    <div>
+                        <!-- Badge & Category Header -->
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="px-2.5 py-1 rounded-md bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 text-[10px] font-extrabold tracking-wider uppercase border border-blue-100 dark:border-blue-500/15">
+                                API Developer Platform
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono">ID: XSF-GRIDAPI</span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                            <span>📡</span> GridAPI Engine
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 font-light leading-relaxed mb-6">
+                            High-velocity custom API gateway routing. Set up webhooks, trigger serverless endpoints, and distribute payload metadata dynamically with sub-millisecond route calculations.
+                        </p>
+
+                        <!-- Key Specs List -->
+                        <div class="space-y-3 mb-6 bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200/50 dark:border-slate-800">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">ROUTE DISPATCH TIME:</span>
+                                <span class="font-bold text-slate-700 dark:text-slate-300">&lt; 1ms route resolver</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">CONCURRENT CONNECTIONS:</span>
+                                <span class="font-bold text-slate-700 dark:text-slate-300">10,000 requests/sec limit</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">SECURE RATE LIMITING:</span>
+                                <span class="font-bold text-emerald-500 flex items-center gap-1">🛡️ Intelligent IP Guard</span>
+                            </div>
+                        </div>
+
+                        <!-- Webhook Action Simulator -->
+                        <div class="p-4 rounded-xl bg-slate-950 text-slate-100 font-mono text-xs space-y-3 mb-6">
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                                <span class="text-[10px] text-xbox-400 font-bold uppercase">⚡ Webhook Listener Console</span>
+                                <span class="text-[10px] text-slate-400 animate-pulse">● Waiting</span>
+                            </div>
+                            <div id="webhook-logs" class="text-[10px] text-slate-500 leading-relaxed font-mono h-20 overflow-y-auto space-y-1 terms-scroll">
+                                <p>[SYSTEM] Awaiting incoming webhook execution event...</p>
+                            </div>
+                            <button type="button" onclick="fireTestWebhook()" class="w-full py-1.5 rounded bg-xbox-500 text-white font-bold text-[10px] hover:bg-xbox-600 transition">
+                                Trigger Test Payload (Webhook POST)
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                        <a href="index.html#pricing" class="text-xs font-bold text-xbox-500 hover:underline flex items-center gap-1">
+                            Deploy with LTD Spot &rarr;
+                        </a>
+                        <span class="text-xs font-semibold text-slate-400">Includes Webhook Logging</span>
+                    </div>
+                </div>
+
+                <!-- Product 4: Sovereign Edge Container -->
+                <div class="product-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-xbox-500/40 relative overflow-hidden" data-category="sites">
+                    <div>
+                        <!-- Badge & Category Header -->
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="px-2.5 py-1 rounded-md bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 text-[10px] font-extrabold tracking-wider uppercase border border-purple-100 dark:border-purple-500/15">
+                                Serverless Edge Compute
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono">ID: XSF-SOVEREIGN</span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                            <span>🚀</span> Sovereign Host Edge
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 font-light leading-relaxed mb-6">
+                            Scale serverless Javascript / Node processes instantly inside hyper-secure, atomic sandbox micro-containers directly on our low-latency globally distributed servers.
+                        </p>
+
+                        <!-- Key Specs List -->
+                        <div class="space-y-3 mb-6 bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200/50 dark:border-slate-800">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">COLD START TIMEFRAME:</span>
+                                <span class="font-bold text-emerald-500 flex items-center gap-1">⏱️ &lt; 5ms (Instant On)</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">MEMORY BIND ALLOCATION:</span>
+                                <span class="font-bold text-slate-700 dark:text-slate-300">128MB - 512MB Dynamic scale</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">DEPLOYMENT MATRIX:</span>
+                                <span class="font-bold text-slate-700 dark:text-slate-300">GitHub push / API hook triggers</span>
+                            </div>
+                        </div>
+
+                        <!-- Edge Container Console Simulator -->
+                        <div class="p-4 rounded-xl bg-slate-950 text-slate-100 font-mono text-xs space-y-3 mb-6">
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                                <span class="text-[10px] text-xbox-400 font-bold uppercase">⚡ Select Deployment Region</span>
+                                <span id="edge-speed-tag" class="text-[10px] text-emerald-400">-- ms Latency</span>
+                            </div>
+                            
+                            <select id="region-selector" onchange="runRegionSimulation()" class="w-full px-2.5 py-1.5 bg-slate-900 border border-slate-800 rounded text-[10px] text-slate-300 cursor-pointer focus:outline-none focus:ring-1 focus:ring-xbox-500">
+                                <option value="" selected disabled>-- Select a Target Server --</option>
+                                <option value="seattle">US West Hub (Seattle, USA)</option>
+                                <option value="frankfurt">EU Central Hub (Frankfurt, DE)</option>
+                                <option value="singapore">Asia Pacific Hub (Singapore, SG)</option>
+                            </select>
+
+                            <p id="region-log" class="text-[10px] text-slate-500 italic mt-1.5">No location currently targeted.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                        <a href="index.html#pricing" class="text-xs font-bold text-xbox-500 hover:underline flex items-center gap-1">
+                            Deploy with LTD Spot &rarr;
+                        </a>
+                        <span class="text-xs font-semibold text-slate-400">Requires 3 LTD Credits</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Interactive Sandbox Configuration Tool -->
+        <section class="border-t border-b border-slate-200 dark:border-slate-900 bg-slate-100/50 dark:bg-slate-900/30 py-16 lg:py-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center space-y-4 mb-12">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-xbox-100 text-xbox-700 dark:bg-xbox-500/10 dark:text-xbox-400 uppercase tracking-wider">
+                        🛠️ Stack Configurator
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                        Xstream Sandbox Stack Builder
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+                        Simulate custom developer module packages to see instant monthly credit values, bandwidth allocation calculations, and speed outputs.
+                    </p>
+                </div>
+
+                <!-- Configurator Interactive Window -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                    
+                    <!-- Form Controls (Left 7 Columns) -->
+                    <div class="md:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 p-6 sm:p-8 rounded-3xl space-y-6">
+                        
+                        <!-- Toggle Selectors for Modules -->
+                        <div class="space-y-3">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Enable Active Ecosystem Modules</label>
+                            
+                            <div class="space-y-2.5">
+                                <!-- Box 1 -->
+                                <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 cursor-pointer select-none">
+                                    <span class="flex items-center gap-2.5">
+                                        <input type="checkbox" id="stack-xsites" checked onchange="updateStackCalculations()" class="h-4 w-4 rounded text-xbox-500 focus:ring-xbox-500" />
+                                        <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Xsites Engine (1 Credit)</span>
+                                    </span>
+                                    <span class="text-[10px] text-slate-400">Static Sites</span>
+                                </label>
+
+                                <!-- Box 2 -->
+                                <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 cursor-pointer select-none">
+                                    <span class="flex items-center gap-2.5">
+                                        <input type="checkbox" id="stack-sheetany" checked onchange="updateStackCalculations()" class="h-4 w-4 rounded text-xbox-500 focus:ring-xbox-500" />
+                                        <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Sheetany Core Engine (2 Credits)</span>
+                                    </span>
+                                    <span class="text-[10px] text-slate-400">Data Pipelines</span>
+                                </label>
+
+                                <!-- Box 3 -->
+                                <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 cursor-pointer select-none">
+                                    <span class="flex items-center gap-2.5">
+                                        <input type="checkbox" id="stack-gridapi" onchange="updateStackCalculations()" class="h-4 w-4 rounded text-xbox-500 focus:ring-xbox-500" />
+                                        <span class="text-xs font-bold text-slate-700 dark:text-slate-300">GridAPI Gateway Routing (1 Credit)</span>
+                                    </span>
+                                    <span class="text-[10px] text-slate-400">Custom Endpoints</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Expected Traffic Volume Slider -->
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center text-xs">
+                                <label class="font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Monthly Traffic Target</label>
+                                <span id="traffic-display" class="font-mono text-xbox-500 font-bold">10,000 Visitors</span>
+                            </div>
+                            <input type="range" id="stack-traffic" min="5000" max="100000" step="5000" value="10000" oninput="updateStackCalculations()" class="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-xbox-500" />
+                            <div class="flex justify-between text-[9px] text-slate-400 font-mono">
+                                <span>5k PV</span>
+                                <span>50k PV</span>
+                                <span>100k PV</span>
+                            </div>
+                        </div>
+
+                        <!-- Database Sync Slider -->
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center text-xs">
+                                <label class="font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Sheetany Cache Sync Frequency</label>
+                                <span id="sync-display" class="font-mono text-xbox-500 font-bold">Hourly</span>
+                            </div>
+                            <input type="range" id="stack-sync" min="1" max="4" step="1" value="2" oninput="updateStackCalculations()" class="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-xbox-500" />
+                            <div class="flex justify-between text-[9px] text-slate-400 font-mono">
+                                <span>Realtime</span>
+                                <span>Hourly</span>
+                                <span>Daily</span>
+                                <span>Weekly</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Configurator Outputs Panel (Right 5 Columns) -->
+                    <div class="md:col-span-5 bg-slate-950 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-slate-900 glow-green relative overflow-hidden">
+                        
+                        <!-- Grid decorative layout background inside panel -->
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(16,124,16,0.1),transparent_70%)] pointer-events-none"></div>
+
+                        <div class="space-y-6 relative">
+                            <div>
+                                <h4 class="text-xs font-bold text-xbox-400 tracking-wider uppercase mb-1">Stack Calculation Index</h4>
+                                <h3 class="text-xl font-black text-white">Estimated Node Resource Bounds</h3>
+                            </div>
+
+                            <div class="space-y-4">
+                                <!-- Grid metrics rows -->
+                                <div class="flex justify-between items-center py-2.5 border-b border-slate-900">
+                                    <span class="text-xs text-slate-400">Total Build Credits / Month</span>
+                                    <span id="out-credits" class="text-lg font-black text-xbox-400">3 Credits</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-slate-900">
+                                    <span class="text-xs text-slate-400">Dedicated Edge Bandwidth</span>
+                                    <span id="out-bandwidth" class="text-sm font-bold text-slate-200">10 GB / Mo</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-slate-900">
+                                    <span class="text-xs text-slate-400">Estimated Core Cold Starts</span>
+                                    <span id="out-coldstarts" class="text-sm font-bold text-slate-200">~ 4.2ms</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2.5">
+                                    <span class="text-xs text-slate-400">Deployment Feasibility</span>
+                                    <span id="out-feasibility" class="text-xs font-extrabold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Optimal Stack</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 relative space-y-3">
+                            <a href="index.html#pricing" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-bold text-white bg-xbox-500 hover:bg-xbox-600 rounded-xl transition duration-200 shadow-md">
+                                Claim Sandbox LTD Spot Now
+                            </a>
+                            <p class="text-[9px] text-slate-500 text-center">
+                                Estimated using the 2026 Genesis Credits Framework. Subject to active account fair usage rules.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Product Comparison Matrix -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+            
+            <div class="text-center space-y-4 mb-16">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-xbox-100 text-xbox-700 dark:bg-xbox-500/10 dark:text-xbox-400 uppercase tracking-wider">
+                    📊 Comprehensive Comparison Matrix
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                    Sovereign Core Module Features
+                </h2>
+                <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+                    Compare capacities, scaling thresholds, and direct configurations across our 2026 platform architecture.
+                </p>
+            </div>
+
+            <!-- Table Responsive Wrap -->
+            <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900">
+                <table class="w-full text-left border-collapse text-xs">
+                    <thead>
+                        <tr class="bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 text-slate-400 uppercase tracking-wider font-bold">
+                            <th class="p-4 sm:p-5">Platform Feature Dimension</th>
+                            <th class="p-4 sm:p-5 text-xbox-500 dark:text-xbox-400 font-black">Xsites Portal</th>
+                            <th class="p-4 sm:p-5">Sheetany Core</th>
+                            <th class="p-4 sm:p-5">GridAPI Engine</th>
+                            <th class="p-4 sm:p-5">Sovereign Host</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 dark:divide-slate-800/80 text-slate-600 dark:text-slate-300">
+                        <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-950/20 transition">
+                            <td class="p-4 sm:p-5 font-bold text-slate-800 dark:text-white">Monthly Cost Equivalent</td>
+                            <td class="p-4 sm:p-5 text-xbox-500 dark:text-xbox-400 font-bold">1 Genesis Credit</td>
+                            <td class="p-4 sm:p-5">2 Genesis Credits</td>
+                            <td class="p-4 sm:p-5">1 Genesis Credit</td>
+                            <td class="p-4 sm:p-5">3 Genesis Credits</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-950/20 transition">
+                            <td class="p-4 sm:p-5 font-bold text-slate-800 dark:text-white">Max Bandwidth Allocation</td>
+                            <td class="p-4 sm:p-5">Unlimited Static Files</td>
+                            <td class="p-4 sm:p-5">10GB / Month API Load</td>
+                            <td class="p-4 sm:p-5">50GB Routing Load</td>
+                            <td class="p-4 sm:p-5">100GB Host Route Load</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-950/20 transition">
+                            <td class="p-4 sm:p-5 font-bold text-slate-800 dark:text-white">Deployment Method</td>
+                            <td class="p-4 sm:p-5 text-emerald-500 font-semibold">GitHub Repo Push / API Sync</td>
+                            <td class="p-4 sm:p-5">Direct Sheet Integration</td>
+                            <td class="p-4 sm:p-5">Admin Webhook JSON POST</td>
+                            <td class="p-4 sm:p-5">Managed Serverless Node container</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-950/20 transition">
+                            <td class="p-4 sm:p-5 font-bold text-slate-800 dark:text-white">Security Protections</td>
+                            <td class="p-4 sm:p-5">Strict SSL Encryption</td>
+                            <td class="p-4 sm:p-5">Bearer Auth Token Cryptography</td>
+                            <td class="p-4 sm:p-5">Bearer API Key Validation</td>
+                            <td class="p-4 sm:p-5">Isolated Container Sanitize</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-950/20 transition">
+                            <td class="p-4 sm:p-5 font-bold text-slate-800 dark:text-white">SLA Support Level</td>
+                            <td class="p-4 sm:p-5">Standard Portal Tickets</td>
+                            <td class="p-4 sm:p-5 text-emerald-500 font-semibold">Founder Escalation Path</td>
+                            <td class="p-4 sm:p-5">Standard Route Logs</td>
+                            <td class="p-4 sm:p-5">24/7 Server Operations SLA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Interactive Footer Section -->
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900 mt-auto transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+                
+                <!-- Footer Identity -->
+                <div class="md:col-span-4 space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-xbox-500 text-white flex items-center justify-center font-bold">
+                            X
+                        </div>
+                        <span class="text-lg font-bold tracking-tight text-white">Xstream Flex</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Filling the void for solo builders. Fast execution without teams or expensive budgets. Deploying professional-grade first impressions, every single time.
+                    </p>
+                    <div class="flex items-center space-x-4 pt-2">
+                        <!-- Github Link -->
+                        <a href="https://github.com" class="hover:text-xbox-500 text-slate-500 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                        </a>
+                        <!-- Twitter/X Link -->
+                        <a href="https://x.com" class="hover:text-xbox-500 text-slate-500 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer Navigation Matrix Links -->
+                <div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+                    
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Launch Products</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a href="products.html" class="hover:text-white cursor-pointer transition">Xsites Portal</a></li>
+                            <li><a href="products.html" class="hover:text-white cursor-pointer transition">Sheetany Core</a></li>
+                            <li><a href="index.html#pricing" class="hover:text-white transition">Founder's LTD Spot</a></li>
+                            <li><a href="about.html" class="hover:text-white transition">SaaS Architectures</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Core Platform Documentation</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a href="terms.html" class="hover:text-white cursor-pointer transition">Terms of Use (terms.html)</a></li>
+                            <li><a href="privacy.html" class="hover:text-white cursor-pointer transition">Privacy &amp; Rules (privacy.html)</a></li>
+                            <li><a href="index.html#interactive-demo" class="hover:text-white cursor-pointer transition">Support System</a></li>
+                            <li><a href="about.html" class="hover:text-white transition text-xbox-400 font-semibold">About Us (about.html)</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Latest Insights</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a href="about.html" class="hover:text-white cursor-pointer transition">The "Vibe Coding" Era</a></li>
+                            <li><a href="about.html" class="hover:text-white cursor-pointer transition">Indie Dev Tools</a></li>
+                            <li><a href="about.html" class="hover:text-white cursor-pointer transition">GitHub Pages Routing</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright / Status bar -->
+            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                <p>&copy; 2026 Xstream Flex Inc. All digital rights reserved. Crafted for solo entrepreneurs globally.</p>
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-slate-500">All Platforms Operating Normally</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Vanilla Javascript Logic System -->
+    <script>
+        // ----------------------------------------------------
+        // Theme Toggle Controller (Sun / Moon)
+        // ----------------------------------------------------
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('theme-toggle-sun');
+        const moonIcon = document.getElementById('theme-toggle-moon');
+
+        // Check user preferences
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            if (sunIcon) sunIcon.classList.remove('hidden');
+            if (moonIcon) moonIcon.classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            if (sunIcon) sunIcon.classList.add('hidden');
+            if (moonIcon) moonIcon.classList.remove('hidden');
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', function() {
+                // Toggle icons
+                if (sunIcon) sunIcon.classList.toggle('hidden');
+                if (moonIcon) moonIcon.classList.toggle('hidden');
+
+                // If is dark mode, set light mode
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            });
+        }
+
+        // ----------------------------------------------------
+        // Product Filter System
+        // ----------------------------------------------------
+        function filterProducts(category) {
+            // Update filter button visuals
+            const buttons = document.querySelectorAll('.product-filter-btn');
+            buttons.forEach(btn => {
+                btn.className = "product-filter-btn px-5 py-2.5 rounded-xl text-xs font-bold transition-all border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-xbox-500";
+            });
+
+            const activeBtn = document.getElementById(`filter-btn-${category}`);
+            if (activeBtn) {
+                activeBtn.className = "product-filter-btn px-5 py-2.5 rounded-xl text-xs font-bold transition-all border border-xbox-500 bg-xbox-500 text-white shadow-md shadow-xbox-500/10";
+            }
+
+            // Filter actual cards
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // ----------------------------------------------------
+        // Product 1 Simulator (Xsites Build Simulator)
+        // ----------------------------------------------------
+        function triggerBuildSimulation() {
+            const btn = document.getElementById('simulate-build-btn');
+            const progressBar = document.getElementById('comp-progress-bar');
+            const statusTag = document.getElementById('comp-status');
+            const logText = document.getElementById('comp-log');
+
+            if (!btn || !progressBar || !statusTag || !logText) return;
+
+            btn.disabled = true;
+            btn.innerText = "Simulating Build Process...";
+            statusTag.innerText = "Processing";
+            statusTag.className = "text-[10px] text-amber-500 animate-pulse";
+            progressBar.style.width = "0%";
+            logText.innerText = "Compiling templates, analyzing payload assets...";
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 25;
+                progressBar.style.width = `${progress}%`;
+                
+                if (progress === 25) {
+                    logText.innerText = "Hashing routes & building dynamic site headers...";
+                } else if (progress === 50) {
+                    logText.innerText = "Injecting SSL certificate bindings & DNS nodes...";
+                } else if (progress === 75) {
+                    logText.innerText = "Streaming generated bundle to Global CDN routers...";
+                } else if (progress === 100) {
+                    clearInterval(interval);
+                    logText.innerText = "Compiled successfully in 0.12 seconds! Site is LIVE.";
+                    statusTag.innerText = "Live / Success";
+                    statusTag.className = "text-[10px] text-emerald-400 font-bold";
+                    btn.disabled = false;
+                    btn.innerText = "Rerun Build Simulation";
+                }
+            }, 500);
+        }
+
+        // ----------------------------------------------------
+        // Product 2 Simulator (Sheetany Mock Schemas)
+        // ----------------------------------------------------
+        const mockSchemas = {
+            products: `[
+  { "id": 1, "title": "Developer Desk", "price": 499 },
+  { "id": 2, "title": "Ergonomic Chair", "price": 280 }
+]`,
+            users: `[
+  { "id": 101, "name": "Sarah Miller", "role": "Lead Architect" },
+  { "id": 102, "name": "Thomas Thorne", "role": "Fullstack Founder" }
+]`
+        };
+
+        function switchSchema(type) {
+            const block = document.getElementById('schema-json-block');
+            const btns = document.querySelectorAll('.schema-tab-btn');
+            
+            if (!block) return;
+            block.innerText = mockSchemas[type];
+
+            btns.forEach(btn => {
+                btn.className = "schema-tab-btn px-2 py-1 rounded bg-slate-900 border border-transparent text-[9px] text-slate-400 hover:text-white";
+            });
+
+            const activeBtn = document.getElementById(`schema-btn-${type}`);
+            if (activeBtn) {
+                activeBtn.className = "schema-tab-btn px-2 py-1 rounded bg-slate-800 border border-xbox-500 text-[9px] text-white";
+            }
+        }
+
+        // ----------------------------------------------------
+        // Product 3 Simulator (Webhook Listener POST)
+        // ----------------------------------------------------
+        function fireTestWebhook() {
+            const logs = document.getElementById('webhook-logs');
+            if (!logs) return;
+
+            const timestamp = new Date().toLocaleTimeString();
+            const payloadId = Math.floor(100000 + Math.random() * 900000);
+
+            const newLog = document.createElement('p');
+            newLog.className = "text-emerald-400 text-[10px]";
+            newLog.innerHTML = `[${timestamp}] <span class="text-white">POST HTTP 202</span> Event: checkout_completed | ID: #${payloadId} (Handled safely)`;
+            
+            logs.appendChild(newLog);
+            logs.scrollTop = logs.scrollHeight;
+        }
+
+        // ----------------------------------------------------
+        // Product 4 Simulator (Edge Deployment Regions)
+        // ----------------------------------------------------
+        function runRegionSimulation() {
+            const select = document.getElementById('region-selector');
+            const latencyTag = document.getElementById('edge-speed-tag');
+            const logElement = document.getElementById('region-log');
+
+            if (!select || !latencyTag || !logElement) return;
+
+            const val = select.value;
+            latencyTag.innerText = "Connecting...";
+            latencyTag.className = "text-[10px] text-amber-500 animate-pulse";
+
+            setTimeout(() => {
+                if (val === 'seattle') {
+                    latencyTag.innerText = "14 ms Latency";
+                    latencyTag.className = "text-[10px] text-emerald-400 font-bold";
+                    logElement.innerText = "Seattle primary node fully linked. Direct gigabit fiber loop.";
+                } else if (val === 'frankfurt') {
+                    latencyTag.innerText = "42 ms Latency";
+                    latencyTag.className = "text-[10px] text-emerald-400 font-bold";
+                    logElement.innerText = "Frankfurt server route verified. Low packet jitter mapped.";
+                } else if (val === 'singapore') {
+                    latencyTag.innerText = "115 ms Latency";
+                    latencyTag.className = "text-[10px] text-amber-500 font-bold";
+                    logElement.innerText = "Singapore Asia Core connected. Routed via Transpacific Fiber.";
+                }
+            }, 600);
+        }
+
+        // ----------------------------------------------------
+        // Sandbox Configurator Calculator
+        // ----------------------------------------------------
+        function updateStackCalculations() {
+            const xsites = document.getElementById('stack-xsites').checked;
+            const sheetany = document.getElementById('stack-sheetany').checked;
+            const gridapi = document.getElementById('stack-gridapi').checked;
+            
+            const trafficSlider = document.getElementById('stack-traffic');
+            const syncSlider = document.getElementById('stack-sync');
+
+            const outCredits = document.getElementById('out-credits');
+            const outBandwidth = document.getElementById('out-bandwidth');
+            const outColdstarts = document.getElementById('out-coldstarts');
+            const outFeasibility = document.getElementById('out-feasibility');
+
+            if (!trafficSlider || !syncSlider || !outCredits || !outBandwidth || !outColdstarts || !outFeasibility) return;
+
+            const trafficValue = parseInt(trafficSlider.value);
+            const syncValue = parseInt(syncSlider.value);
+
+            // Display Labels update
+            document.getElementById('traffic-display').innerText = `${trafficValue.toLocaleString()} Visitors`;
+            
+            let syncLabel = "Hourly";
+            if (syncValue === 1) syncLabel = "Realtime";
+            if (syncValue === 2) syncLabel = "Hourly";
+            if (syncValue === 3) syncLabel = "Daily";
+            if (syncValue === 4) syncLabel = "Weekly";
+            document.getElementById('sync-display').innerText = syncLabel;
+
+            // Compute Credits Required
+            let baseCredits = 0;
+            if (xsites) baseCredits += 1;
+            if (sheetany) baseCredits += 2;
+            if (gridapi) baseCredits += 1;
+
+            outCredits.innerText = `${baseCredits} Credits`;
+
+            // Compute Bandwidth calculation
+            const baseBandwidth = (trafficValue / 1000) * (xsites ? 0.5 : 0.1);
+            const computedBandwidth = Math.max(5, Math.round(baseBandwidth));
+            outBandwidth.innerText = `${computedBandwidth} GB / Mo`;
+
+            // Cold starts simulation output
+            let latency = 3.5;
+            if (syncValue === 1) latency += 1.2; // Realtime sync takes slightly more warm uptime
+            if (gridapi) latency -= 0.8; // GridAPI optimizes routing overheads
+            outColdstarts.innerText = `~ ${latency.toFixed(1)}ms`;
+
+            // Set feasibility label
+            if (baseCredits === 0) {
+                outFeasibility.innerText = "No Stack Modules Selected";
+                outFeasibility.className = "text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20";
+            } else if (baseCredits > 3) {
+                outFeasibility.innerText = "Heavy Dynamic Compute Load";
+                outFeasibility.className = "text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20";
+            } else {
+                outFeasibility.innerText = "Optimal Stack Configured";
+                outFeasibility.className = "text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
+            }
+        }
+
+        // Initialize Calculator
+        window.addEventListener('load', () => {
+            updateStackCalculations();
+        });
+    </script>
+</body>
+</html>
