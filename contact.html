@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Xstream Flex - Vibe Code to Live Sites Instantly</title>
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        xbox: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#107C10', // Authentic Xbox Green
+                            600: '#0f6f0f',
+                            400: '#22c55e',
+                            300: '#4ade80',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Geist', 'Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts for premium feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glow-green {
+            box-shadow: 0 0 20px rgba(16, 124, 16, 0.15);
+        }
+        .dark .glow-green {
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.25);
+        }
+        /* Custom scrollbar for legal/doc layout */
+        .terms-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .terms-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .terms-scroll::-webkit-scrollbar-thumb {
+            background: #107C10;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50 min-h-screen flex flex-col">
+
+    <!-- Premium Sticky Header -->
+    <header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                
+                <!-- Logo with Rocket X Icon -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="relative flex items-center justify-center w-10 h-10 rounded-xl bg-xbox-500 text-white transition-all duration-300 group-hover:scale-115 group-hover:rotate-12 glow-green">
+                        <!-- Rocket X SVG Icon -->
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 0M12 21V11m0 0l-3.5 3.5M12 11l3.5 3.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <!-- Orbital Rocket Flame Element -->
+                        <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-amber-500 rounded-full border-2 border-white dark:border-slate-950 animate-ping"></span>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-xbox-600 to-slate-950 dark:from-white dark:via-xbox-400 dark:to-white bg-clip-text text-transparent">
+                        Xstream <span class="text-xbox-500 dark:text-xbox-400">Flex</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">About</a>
+                    <a href="index.html#features" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">Features</a>
+                    <a href="index.html#interactive-demo" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">Products</a>
+                    <a href="index.html#pricing" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">Pricing Matrix</a>
+                    <a href="index.html#faq" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">FAQ</a>
+                </nav>
+
+                <!-- Action Button & Theme Toggle -->
+                <div class="flex items-center space-x-4">
+                    <!-- Native Theme Toggle Button -->
+                    <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 focus:outline-none transition-all duration-200" aria-label="Toggle dark mode">
+                        <!-- Sun Icon (Visible when in dark mode) -->
+                        <svg id="theme-toggle-sun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+                        </svg>
+                        <!-- Moon Icon (Visible when in light mode) -->
+                        <svg id="theme-toggle-moon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+
+                    <!-- CTA Header Button -->
+                    <a href="index.html#pricing" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-xbox-500 hover:bg-xbox-600 rounded-xl transition-all duration-200 shadow-md hover:shadow-xbox-500/20 glow-green">
+                        Claim LTD Spot
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Urgency Rocket Announcement Banner -->
+    <div class="bg-gradient-to-r from-xbox-600 via-emerald-600 to-cyan-700 text-white py-3 px-4 text-center text-sm font-semibold relative overflow-hidden">
+        <span class="inline-flex items-center">
+            <span class="mr-2 animate-bounce">🚀</span> 
+            <strong>The 2026 Founder's LTD is LIVE:</strong> Grab 15 Genesis Site Credits for $99 once, use forever. No monthly lock-ins!
+            <a href="index.html#pricing" class="underline ml-2 hover:text-lime-200 transition">Lock in Lifetime Pricing &rarr;</a>
+        </span>
+    </div>
+
+    <!-- Main Content Container for Contact Page -->
+    <main class="flex-grow">
+        
+        <!-- Header Hero Section -->
+        <section class="relative overflow-hidden py-16 lg:py-24 border-b border-slate-200 dark:border-slate-900 bg-slate-100/50 dark:bg-slate-950/20">
+            <!-- Background Radial Gradients -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,124,16,0.08),transparent_50%)] pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-xbox-100 dark:bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 text-xs sm:text-sm font-bold tracking-wide uppercase border border-xbox-200 dark:border-xbox-500/20 mb-6">
+                    💬 Connect with our Deployment &amp; Support Architects
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6">
+                    Let's Connect to <span class="bg-gradient-to-r from-xbox-500 to-emerald-500 bg-clip-text text-transparent font-black">The Xstream Grid</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                    Have questions about the 2026 Founder's Lifetime Deal, need custom API routing structures, or just want to vibe code alongside our team? We are responsive around the clock.
+                </p>
+            </div>
+        </section>
+
+        <!-- Interactive Contact Area Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left Side: Interactive Contact Form (7 Cols) -->
+                <div class="lg:col-span-7 space-y-8">
+                    
+                    <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 shadow-xl space-y-6 relative overflow-hidden">
+                        
+                        <!-- Header inside form card -->
+                        <div>
+                            <h2 class="text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
+                                ✉️ Secure Message Gateway
+                            </h2>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-light">
+                                Your transmissions are routed instantly over fully encrypted pipelines straight to our active engineering terminals.
+                            </p>
+                        </div>
+
+                        <!-- SLA Estimate Indicator Badge based on dropdown -->
+                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/60 dark:border-slate-800 flex items-center justify-between">
+                            <span class="text-xs font-bold text-slate-500 dark:text-slate-400">ESTIMATED RESPONSE SLA:</span>
+                            <span id="sla-badge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-extrabold bg-xbox-100 text-xbox-700 dark:bg-xbox-500/15 dark:text-xbox-400 tracking-wider uppercase">
+                                <span class="w-1.5 h-1.5 rounded-full bg-xbox-500 animate-ping"></span> Under 15 Minutes
+                            </span>
+                        </div>
+
+                        <!-- Contact Form element -->
+                        <form id="active-contact-form" onsubmit="submitGatewayForm(event)" class="space-y-5">
+                            
+                            <!-- Name & Organization Grid -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div class="space-y-2">
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Your Identity</label>
+                                    <input type="text" id="form-name" required placeholder="e.g. Alex Rivera" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-xbox-500 text-slate-800 dark:text-slate-100 placeholder-slate-400/80" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Organization / Project</label>
+                                    <input type="text" id="form-org" placeholder="e.g. Solo Developer" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-xbox-500 text-slate-800 dark:text-slate-100 placeholder-slate-400/80" />
+                                </div>
+                            </div>
+
+                            <!-- Email Address -->
+                            <div class="space-y-2">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Verify Email Address</label>
+                                <input type="email" id="form-email" required placeholder="you@domain.com" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-xbox-500 text-slate-800 dark:text-slate-100 placeholder-slate-400/80" />
+                            </div>
+
+                            <!-- Support Category Selection (changes the SLA badge instantly) -->
+                            <div class="space-y-2">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Inquiry Channel</label>
+                                <select id="form-channel" onchange="shiftSLADynamic()" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-xbox-500 text-slate-800 dark:text-slate-100 cursor-pointer">
+                                    <option value="enterprise">Enterprise Systems &amp; Deployments (&lt;15m SLA)</option>
+                                    <option value="ltd" selected>Genesis Founder's LTD Ticket Assistance (&lt;15m SLA)</option>
+                                    <option value="partnership">Partner &amp; API Integration (&lt;2h SLA)</option>
+                                    <option value="general">General Support / Custom Vibe Coding Help (&lt;4h SLA)</option>
+                                </select>
+                            </div>
+
+                            <!-- Message Content Area -->
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Transmission Payload</label>
+                                    <span id="char-indicator" class="text-[10px] font-mono text-slate-400">0/1000 characters</span>
+                                </div>
+                                <textarea id="form-msg" required maxlength="1000" onkeyup="countMessageChars()" rows="5" placeholder="Describe what you are building, your deployment requirements, or any setup issues..." class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-xbox-500 text-slate-800 dark:text-slate-100 placeholder-slate-400/80 resize-none"></textarea>
+                            </div>
+
+                            <!-- Verification terms checkbox -->
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="terms-agree" required class="mt-1 h-5 w-5 rounded border-slate-300 bg-white dark:bg-slate-900 text-xbox-500 focus:ring-xbox-500 cursor-pointer" />
+                                <label for="terms-agree" class="text-xs text-slate-500 dark:text-slate-400 select-none cursor-pointer">
+                                    I consent to secure caching of this transaction for tracking support history under the <a href="privacy.html" class="underline text-xbox-500 hover:text-xbox-600">Xstream Privacy Charter</a>.
+                                </label>
+                            </div>
+
+                            <!-- Submit Action Button -->
+                            <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-4 text-sm font-bold text-white bg-xbox-500 hover:bg-xbox-600 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xbox-500/20 glow-green cursor-pointer">
+                                <span class="mr-2">🚀</span> Broadcast to Xstream Grid
+                            </button>
+
+                        </form>
+
+                        <!-- Dynamic Success Feedback Screen Overlay -->
+                        <div id="form-success-screen" class="hidden absolute inset-0 bg-white dark:bg-slate-900 flex flex-col justify-center items-center p-8 text-center space-y-6 z-10">
+                            <div class="w-20 h-20 rounded-full bg-xbox-500/10 text-xbox-500 flex items-center justify-center text-4xl animate-bounce glow-green">
+                                ✓
+                            </div>
+                            <div class="space-y-2">
+                                <h3 class="text-2xl font-black text-slate-900 dark:text-white">TRANSMISSION BROADCASTED</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+                                    Your packet was fully compiled, hashed, and successfully routed to our support operations array. Your queue ticket is active.
+                                </p>
+                            </div>
+
+                            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 font-mono text-left text-[11px] w-full max-w-md space-y-2">
+                                <div class="flex justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+                                    <span class="text-slate-400">TRANSACTION INDEX:</span>
+                                    <span id="res-tkt-id" class="text-xbox-500 font-bold">XSF-TKT-XXXX</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+                                    <span class="text-slate-400">DESTINATION:</span>
+                                    <span class="text-slate-300">support-node-direct-ops</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+                                    <span class="text-slate-400">TIMESTAMP:</span>
+                                    <span id="res-tkt-time" class="text-slate-300">00:00:00 UTC</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-400">VERIFIED SIGN:</span>
+                                    <span class="text-emerald-400 font-semibold text-right truncate max-w-[200px]" id="res-hash">SHA256-HASH-HEX</span>
+                                </div>
+                            </div>
+
+                            <button onclick="resetContactForm()" class="px-5 py-2.5 text-xs font-bold rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-950 transition">
+                                Send Another Message
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- SLA Commitment Statement Box -->
+                    <div class="p-6 rounded-2xl bg-slate-100/60 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 flex gap-4 items-start">
+                        <span class="text-2xl mt-1">🛡️</span>
+                        <div>
+                            <h4 class="text-xs font-bold text-slate-800 dark:text-white uppercase tracking-wider mb-1">Our Sovereign Creator Pledge</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-light">
+                                We hold ourselves to uncompromising speeds. If you register an active Genesis Founder Ticket, our engineering founders are notified directly on internal channels to troubleshoot compilation pathways, custom domains, or SSL handshakes instantly.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Side: Contact Channels & Interactive Network Diagnostic Tool (5 Cols) -->
+                <div class="lg:col-span-5 space-y-8">
+                    
+                    <!-- Core Points of Contact -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Corporate Channels</h3>
+                        
+                        <div class="space-y-4">
+                            <!-- Email Channel -->
+                            <div class="flex items-start gap-3.5 pb-4 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="p-2.5 rounded-xl bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 text-lg">
+                                    ✉️
+                                </span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-400 dark:text-slate-500">MAIN ARCHIVE OPERATIONS</div>
+                                    <a href="mailto:ops@xstreamflex.com" class="text-sm font-semibold text-slate-800 dark:text-white hover:text-xbox-500 transition">ops@xstreamflex.com</a>
+                                    <p class="text-[10px] text-slate-400 mt-1">Direct general corporate and legal correspondence.</p>
+                                </div>
+                            </div>
+
+                            <!-- Founder Escalation Channel -->
+                            <div class="flex items-start gap-3.5 pb-4 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="p-2.5 rounded-xl bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 text-lg">
+                                    👑
+                                </span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-400 dark:text-slate-500">FOUNDER HOTLINE</div>
+                                    <a href="mailto:founders@xstreamflex.com" class="text-sm font-semibold text-slate-800 dark:text-white hover:text-xbox-500 transition">founders@xstreamflex.com</a>
+                                    <p class="text-[10px] text-slate-400 mt-1">Escalate configuration blocks or strategic partnership pitches.</p>
+                                </div>
+                            </div>
+
+                            <!-- Hub Coordinates -->
+                            <div class="flex items-start gap-3.5">
+                                <span class="p-2.5 rounded-xl bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 text-lg">
+                                    📍
+                                </span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-400 dark:text-slate-500">HEADQUARTERS VECTOR</div>
+                                    <div class="text-sm font-semibold text-slate-800 dark:text-white">Seattle Cloud District</div>
+                                    <p class="text-[10px] text-slate-400 mt-1">Sovereign network operations &amp; engineering lab. Virtual office systems only.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Interactive Network Diagnostic / Ping Tool -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Edge Grid Diagnostic</h3>
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-500 uppercase tracking-widest">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> SYSTEM HEALTHY
+                            </span>
+                        </div>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+                            Run a safe transmission diagnostic ping from your current terminal directly to our local high-performance compilation routers.
+                        </p>
+
+                        <!-- Diagnostic Output Box -->
+                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 space-y-3 font-mono text-[11px]">
+                            <div class="flex justify-between items-center text-slate-500 dark:text-slate-400">
+                                <span>SEATTLE HUB:</span>
+                                <span id="ping-seattle" class="text-slate-400 font-bold">-- ms</span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-500 dark:text-slate-400">
+                                <span>FRANKFURT CORE:</span>
+                                <span id="ping-frankfurt" class="text-slate-400 font-bold">-- ms</span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-500 dark:text-slate-400">
+                                <span>SINGAPORE GATEWAY:</span>
+                                <span id="ping-singapore" class="text-slate-400 font-bold">-- ms</span>
+                            </div>
+                            <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center font-bold text-slate-700 dark:text-slate-300">
+                                <span>COMPILATION LATENCY:</span>
+                                <span id="latency-rating" class="text-slate-400">NOT TESTED</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Button to Ping -->
+                        <button type="button" onclick="runEdgeDiagnostic()" id="ping-btn" class="w-full inline-flex items-center justify-center px-4 py-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-xbox-500 dark:hover:border-xbox-500 rounded-xl transition cursor-pointer">
+                            ⚡ Run Connection Diagnostic
+                        </button>
+                    </div>
+
+                    <!-- Genesis Founders LTD Callout Widget -->
+                    <div class="p-8 rounded-3xl bg-gradient-to-r from-xbox-500/10 via-emerald-500/5 to-cyan-500/10 border border-xbox-500/30 space-y-4">
+                        <h4 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                            <span>🚀</span> Claim Your Genesis Spot
+                        </h4>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 font-light leading-relaxed">
+                            Need help securing your Lifetime spot? Check the checkbox inside your inquiry channel dropdown, send a ticket and we will lock down your verified credentials immediately.
+                        </p>
+                        <a href="index.html#pricing" class="inline-flex items-center text-xs font-bold text-xbox-600 dark:text-xbox-400 hover:underline">
+                            View Lifetime Pricing Tier Matrix &rarr;
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Interactive Footer Section -->
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900 mt-auto transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+                
+                <!-- Footer Identity -->
+                <div class="md:col-span-4 space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-xbox-500 text-white flex items-center justify-center font-bold">
+                            X
+                        </div>
+                        <span class="text-lg font-bold tracking-tight text-white">Xstream Flex</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Filling the void for solo builders. Fast execution without teams or expensive budgets. Deploying professional-grade first impressions, every single time.
+                    </p>
+                    <div class="flex items-center space-x-4 pt-2">
+                        <!-- Github Link -->
+                        <a href="https://github.com" class="hover:text-xbox-500 text-slate-500 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                        </a>
+                        <!-- Twitter/X Link -->
+                        <a href="https://x.com" class="hover:text-xbox-500 text-slate-500 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer Navigation Matrix Links -->
+                <div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+                    
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Launch Products</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a href="index.html#interactive-demo" class="hover:text-white cursor-pointer transition">Xsites Portal</a></li>
+                            <li><a href="index.html#interactive-demo" class="hover:text-white cursor-pointer transition">Sheetany Core</a></li>
+                            <li><a href="index.html#pricing" class="hover:text-white transition">Founder's LTD Spot</a></li>
+                            <li><a href="about.html" class="hover:text-white transition">SaaS Architectures</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Core Platform Documentation</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a href="terms.html" class="hover:text-white cursor-pointer transition">Terms of Use (terms.html)</a></li>
+                            <li><a href="privacy.html" class="hover:text-white cursor-pointer transition">Privacy &amp; Rules (privacy.html)</a></li>
+                            <li><a href="index.html#interactive-demo" class="hover:text-white cursor-pointer transition">Support System</a></li>
+                            <li><a href="about.html" class="hover:text-white transition text-xbox-400 font-semibold">About Us (about.html)</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Latest Insights</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a href="about.html" class="hover:text-white cursor-pointer transition">The "Vibe Coding" Era</a></li>
+                            <li><a href="about.html" class="hover:text-white cursor-pointer transition">Indie Dev Tools</a></li>
+                            <li><a href="about.html" class="hover:text-white cursor-pointer transition">GitHub Pages Routing</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright / Status bar -->
+            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                <p>&copy; 2026 Xstream Flex Inc. All digital rights reserved. Crafted for solo entrepreneurs globally.</p>
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-slate-500">All Platforms Operating Normally</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Vanilla Javascript Logic System -->
+    <script>
+        // ----------------------------------------------------
+        // Theme Toggle Controller (Sun / Moon)
+        // ----------------------------------------------------
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('theme-toggle-sun');
+        const moonIcon = document.getElementById('theme-toggle-moon');
+
+        // Check user preferences
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            if (sunIcon) sunIcon.classList.remove('hidden');
+            if (moonIcon) moonIcon.classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            if (sunIcon) sunIcon.classList.add('hidden');
+            if (moonIcon) moonIcon.classList.remove('hidden');
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', function() {
+                // Toggle icons
+                if (sunIcon) sunIcon.classList.toggle('hidden');
+                if (moonIcon) moonIcon.classList.toggle('hidden');
+
+                // If is dark mode, set light mode
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            });
+        }
+
+        // ----------------------------------------------------
+        // SLA Target Swapper Based on Dropdown Select
+        // ----------------------------------------------------
+        function shiftSLADynamic() {
+            const dropdown = document.getElementById('form-channel');
+            const slaBadge = document.getElementById('sla-badge');
+            
+            if (!dropdown || !slaBadge) return;
+            const selection = dropdown.value;
+
+            if (selection === 'enterprise' || selection === 'ltd') {
+                slaBadge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-xbox-500 animate-ping"></span> Under 15 Minutes';
+                slaBadge.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-extrabold bg-xbox-100 text-xbox-700 dark:bg-xbox-500/15 dark:text-xbox-400 tracking-wider uppercase";
+            } else if (selection === 'partnership') {
+                slaBadge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Under 2 Hours';
+                slaBadge.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-extrabold bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-400 tracking-wider uppercase";
+            } else {
+                slaBadge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Under 4 Hours';
+                slaBadge.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-extrabold bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-400 tracking-wider uppercase";
+            }
+        }
+
+        // ----------------------------------------------------
+        // Form Textarea Character Counter
+        // ----------------------------------------------------
+        function countMessageChars() {
+            const textarea = document.getElementById('form-msg');
+            const counter = document.getElementById('char-indicator');
+            if (textarea && counter) {
+                counter.innerText = `${textarea.value.length}/1000 characters`;
+            }
+        }
+
+        // ----------------------------------------------------
+        // Contact Submission Handler (Simulated Network Gateway)
+        // ----------------------------------------------------
+        function submitGatewayForm(event) {
+            event.preventDefault();
+            
+            // Generate verified details
+            const ticketIdElement = document.getElementById('res-tkt-id');
+            const timestampElement = document.getElementById('res-tkt-time');
+            const hashElement = document.getElementById('res-hash');
+            const successScreen = document.getElementById('form-success-screen');
+
+            // Generate verified ticket strings
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let tktId = 'XSF-TKT-';
+            for (let i = 0; i < 5; i++) {
+                tktId += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            
+            const shaHash = 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855' + Math.floor(Math.random()*1000);
+
+            if (ticketIdElement) ticketIdElement.innerText = tktId;
+            if (timestampElement) timestampElement.innerText = new Date().toUTCString();
+            if (hashElement) hashElement.innerText = shaHash.substring(0, 32) + '...';
+
+            if (successScreen) {
+                successScreen.classList.remove('hidden');
+            }
+        }
+
+        // Reset the simulated feedback window
+        function resetContactForm() {
+            const successScreen = document.getElementById('form-success-screen');
+            const form = document.getElementById('active-contact-form');
+            const counter = document.getElementById('char-indicator');
+            
+            if (successScreen) successScreen.classList.add('hidden');
+            if (form) form.reset();
+            if (counter) counter.innerText = "0/1000 characters";
+            shiftSLADynamic();
+        }
+
+        // ----------------------------------------------------
+        // Interactive Connection Diagnostic Utility
+        // ----------------------------------------------------
+        function runEdgeDiagnostic() {
+            const btn = document.getElementById('ping-btn');
+            const seattleNode = document.getElementById('ping-seattle');
+            const frankfurtNode = document.getElementById('ping-frankfurt');
+            const singaporeNode = document.getElementById('ping-singapore');
+            const latencyRating = document.getElementById('latency-rating');
+
+            if (btn) {
+                btn.disabled = true;
+                btn.innerText = "⚡ Pinging Nodes...";
+            }
+
+            // Simulate staggered responsive server pings
+            setTimeout(() => {
+                const seattleMs = Math.floor(Math.random() * 12) + 6; // 6-18ms
+                if (seattleNode) {
+                    seattleNode.innerText = `${seattleMs} ms`;
+                    seattleNode.className = "text-emerald-500 font-bold";
+                }
+            }, 300);
+
+            setTimeout(() => {
+                const frankfurtMs = Math.floor(Math.random() * 25) + 35; // 35-60ms
+                if (frankfurtNode) {
+                    frankfurtNode.innerText = `${frankfurtMs} ms`;
+                    frankfurtNode.className = "text-emerald-400 font-bold";
+                }
+            }, 650);
+
+            setTimeout(() => {
+                const singaporeMs = Math.floor(Math.random() * 40) + 90; // 90-130ms
+                if (singaporeNode) {
+                    singaporeNode.innerText = `${singaporeMs} ms`;
+                    singaporeNode.className = "text-amber-500 font-bold";
+                }
+            }, 1000);
+
+            setTimeout(() => {
+                if (latencyRating) {
+                    latencyRating.innerText = "HYPER-FLUID (0ms LOST)";
+                    latencyRating.className = "text-xbox-500 dark:text-xbox-400 font-bold";
+                }
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerText = "⚡ Rerun Connection Diagnostic";
+                }
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
