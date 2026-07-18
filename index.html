@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xstream Flex | Vibe Code to Live Sites Instantly</title>
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        xbox: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#107C10', // Authentic Xbox Green
+                            600: '#0f6f0f',
+                            400: '#22c55e',
+                            300: '#4ade80',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Geist', 'Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts for premium feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glow-green {
+            box-shadow: 0 0 20px rgba(16, 124, 16, 0.15);
+        }
+        .dark .glow-green {
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50 min-h-screen flex flex-col">
+
+    <!-- Premium Sticky Header -->
+    <header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                
+                <!-- Logo with Rocket X Icon -->
+                <a href="#hero" class="flex items-center space-x-3 group">
+                    <div class="relative flex items-center justify-center w-10 h-10 rounded-xl bg-xbox-500 text-white transition-all duration-300 group-hover:scale-115 group-hover:rotate-12 glow-green">
+                        <!-- Rocket X SVG Icon -->
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 0M12 21V11m0 0l-3.5 3.5M12 11l3.5 3.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <!-- Orbital Rocket Flame Element -->
+                        <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-amber-500 rounded-full border-2 border-white dark:border-slate-950 animate-ping"></span>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-xbox-600 to-slate-950 dark:from-white dark:via-xbox-400 dark:to-white bg-clip-text text-transparent">
+                        Xstream <span class="text-xbox-500 dark:text-xbox-400">Flex</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">About</a>
+                    <a href="#features" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">Features</a>
+                    <a href="#interactive-demo" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">Products</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">Pricing Matrix</a>
+                    <a href="#faq" class="text-sm font-semibold text-slate-600 hover:text-xbox-500 dark:text-slate-300 dark:hover:text-xbox-400 transition-colors">FAQ</a>
+                </nav>
+
+                <!-- Action Button & Theme Toggle -->
+                <div class="flex items-center space-x-4">
+                    <!-- Native Theme Toggle Button -->
+                    <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 focus:outline-none transition-all duration-200" aria-label="Toggle dark mode">
+                        <!-- Sun Icon (Visible when in dark mode) -->
+                        <svg id="theme-toggle-sun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+                        </svg>
+                        <!-- Moon Icon (Visible when in light mode) -->
+                        <svg id="theme-toggle-moon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+
+                    <!-- CTA Header Button -->
+                    <a href="#pricing" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-xbox-500 hover:bg-xbox-600 rounded-xl transition-all duration-200 shadow-md hover:shadow-xbox-500/20 glow-green">
+                        Claim LTD Spot
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Urgency Rocket Announcement Banner -->
+    <div class="bg-gradient-to-r from-xbox-600 via-emerald-600 to-cyan-700 text-white py-3 px-4 text-center text-sm font-semibold relative overflow-hidden">
+        <span class="inline-flex items-center">
+            <span class="mr-2 animate-bounce">🚀</span> 
+            <strong>The 2026 Founder's LTD is LIVE:</strong> Grab 15 Genesis Site Credits for $99 once, use forever. No monthly lock-ins!
+            <a href="#pricing" class="underline ml-2 hover:text-lime-200 transition">Lock in Lifetime Pricing &rarr;</a>
+        </span>
+    </div>
+
+    <!-- Hero / Moonshot Section -->
+    <section id="hero" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32">
+        <!-- Radial Gradients Background -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,124,16,0.06),transparent_45%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(34,197,94,0.09),transparent_45%)] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-slate-100/50 dark:from-slate-900/40 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Hero Core Information -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-xbox-100 dark:bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 text-xs sm:text-sm font-bold tracking-wide uppercase border border-xbox-200 dark:border-xbox-500/20">
+                        <span class="w-2 h-2 rounded-full bg-xbox-500 animate-pulse"></span>
+                        Bridging the Gap for Solopreneurs
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">
+                        Vibe code your ideas. <br class="hidden sm:inline">
+                        <span class="bg-gradient-to-r from-xbox-500 via-emerald-500 to-cyan-500 bg-clip-text text-transparent">
+                            Ship them in seconds.
+                        </span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        In the digital world, <span class="italic text-slate-800 dark:text-slate-100 font-normal">"build it and they will come"</span> is a fallacy. You need a rock-solid, trust-worthy foundation to capture leads, sell products, and establish credibility without burning your budget on ten complex tools.
+                    </p>
+
+                    <!-- Real-world Case Scenarios -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-xl mx-auto lg:mx-0">
+                        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start space-x-3 shadow-sm">
+                            <span class="text-xbox-500 text-lg">✨</span>
+                            <p class="text-sm text-slate-600 dark:text-slate-300">
+                                <strong>Vibe coded an app?</strong> Host and deploy with a beautiful companion site instantly.
+                            </p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start space-x-3 shadow-sm">
+                            <span class="text-xbox-500 text-lg">🛠️</span>
+                            <p class="text-sm text-slate-600 dark:text-slate-300">
+                                <strong>Need total authority?</strong> Get a built-in blog, contact channels, legal pages, and terms natively.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Call To Actions -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#pricing" class="w-full sm:w-auto px-8 py-4 bg-xbox-500 hover:bg-xbox-600 dark:bg-xbox-500 dark:hover:bg-xbox-400 text-white font-bold rounded-2xl text-center shadow-lg hover:shadow-xbox-500/20 transition-all duration-200 text-lg glow-green">
+                            Claim 15 Lifetime Credits ($99)
+                        </a>
+                        <a href="#interactive-demo" class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 font-bold rounded-2xl text-center hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all duration-200 text-lg">
+                            Explore Features
+                        </a>
+                    </div>
+
+                    <!-- Trust badging -->
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-3 text-xs font-semibold text-slate-500 dark:text-slate-400">
+                        <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-xbox-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> 1-Click GitHub Deploy</span>
+                        <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-xbox-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> Clean Code Deliverable</span>
+                        <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-xbox-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> Zero Ongoing Server Costs</span>
+                    </div>
+                </div>
+
+                <!-- Interactive Hero Widget / Preview Mockup -->
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-xbox-500 to-cyan-500 rounded-3xl blur-2xl opacity-10 dark:opacity-20 animate-pulse"></div>
+                    <div class="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-3xl shadow-2xl p-6 overflow-hidden">
+                        
+                        <!-- Console Header -->
+                        <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4 mb-4">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-3.5 h-3.5 rounded-full bg-rose-500"></span>
+                                <span class="w-3.5 h-3.5 rounded-full bg-amber-400"></span>
+                                <span class="w-3.5 h-3.5 rounded-full bg-emerald-500"></span>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400 dark:text-slate-500">xsites-workspace://main</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 text-xs font-bold font-mono">Live Compiler</span>
+                        </div>
+
+                        <!-- Code preview simulation -->
+                        <div class="space-y-3 font-mono text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            <p><span class="text-purple-500">const</span> project = <span class="text-xbox-500 dark:text-xbox-400">XstreamFlex</span>.init({</p>
+                            <p class="pl-4">idea: <span class="text-amber-600 dark:text-amber-300">"SaaS for Solo Creators"</span>,</p>
+                            <p class="pl-4">stack: [<span class="text-cyan-500">"Tailwind CSS"</span>, <span class="text-cyan-500">"GitHub Pages"</span>],</p>
+                            <p class="pl-4">identity: {</p>
+                            <p class="pl-8 text-indigo-500">pages: ["blog", "terms", "about", "contact", "products"],</p>
+                            <p class="pl-8 text-indigo-500">darkTheme: true,</p>
+                            <p class="pl-8 text-emerald-500">deliverable: "Raw Code To GitHub"</p>
+                            <p class="pl-4">}</p>
+                            <p>});</p>
+                            <p class="pt-2 text-slate-400 dark:text-slate-500">// 🚀 Compiling foundational elements...</p>
+                        </div>
+
+                        <!-- Mini Output Window -->
+                        <div class="mt-6 p-4 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200/80 dark:border-slate-800">
+                            <div class="flex items-center justify-between text-xs mb-2">
+                                <span class="font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-xbox-500"></span> Output Generated
+                                </span>
+                                <span class="text-slate-400 font-mono">1.2s build time</span>
+                            </div>
+                            <div class="space-y-1 text-xs font-mono text-slate-500">
+                                <p class="text-emerald-500">✔ GitHub Repository provisioned</p>
+                                <p class="text-emerald-500">✔ Custom Light/Dark CSS rendered</p>
+                                <p class="text-emerald-500">✔ Compliance pages generated (GDPR/Terms)</p>
+                            </div>
+                        </div>
+
+                        <!-- Visual Callout -->
+                        <div class="mt-6 flex items-center justify-between p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-xbox-700 dark:text-xbox-300 font-semibold">
+                            <span>🚀 Deployment ready for Github Pages hosting!</span>
+                            <a href="#interactive-demo" class="underline hover:text-emerald-500">See Output</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Xstream Flex / Value Proposition Section -->
+    <section id="about" class="py-20 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <h2 class="text-xs uppercase tracking-widest font-extrabold text-xbox-500 dark:text-xbox-400">The Problem we Solve</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950 dark:text-white">
+                    Why Solo Entrepreneurs Are Tired of SaaS Tool Sprawl
+                </p>
+                <p class="text-lg text-slate-600 dark:text-slate-300 font-light leading-relaxed">
+                    You don't need a bloated $200/month visual builder with steep learning curves. You need access to the foundational elements that typically outprice and overcomplicate launching unique, powerful ideas that the world needs to grow.
+                </p>
+            </div>
+
+            <!-- Bento Grid of Highlight Features -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Bento Box 1: You Own the Code -->
+                <div class="md:col-span-2 p-8 rounded-3xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex flex-col justify-between group hover:border-xbox-500/50 dark:hover:border-xbox-400/50 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 opacity-5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-64 h-64 text-xbox-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-xbox-100 dark:bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 flex items-center justify-center mb-6 font-extrabold text-xl">01</div>
+                        <h3 class="text-2xl font-bold mb-4">Complete GitHub Ownership</h3>
+                        <p class="text-slate-600 dark:text-slate-300 font-light leading-relaxed max-w-xl">
+                            We deliver your entire clean, production-ready landing page project directly to your personal GitHub repository. No proprietary visual builder lock-ins. You own the code forever—host it absolutely free on GitHub Pages, deploy to Netlify, Vercel, or download the clean raw ZIP.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-3">
+                        <span class="px-3 py-1 rounded-lg bg-slate-200/50 dark:bg-slate-900 text-xs font-semibold">Free Forever Hosting</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-200/50 dark:bg-slate-900 text-xs font-semibold">1-Click Github Deploy</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-200/50 dark:bg-slate-900 text-xs font-semibold">White-label Output</span>
+                    </div>
+                </div>
+
+                <!-- Bento Box 2: Real Identity (Not Just a Header) -->
+                <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex flex-col justify-between hover:border-xbox-500/50 dark:hover:border-xbox-400/50 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-xbox-100 dark:bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 flex items-center justify-center mb-6 font-extrabold text-xl">02</div>
+                        <h3 class="text-2xl font-bold mb-4">Complete Web Identity</h3>
+                        <p class="text-slate-600 dark:text-slate-300 font-light leading-relaxed">
+                            A high-converting landing page needs trust to sell. Xsites automatically builds your legal terms, privacy guidelines, user compliance docs, custom contact endpoints, and brand presentation layers out of the box. Every site represents a professional-grade first impression.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 text-xs text-xbox-600 dark:text-xbox-400 font-bold">
+                        → Includes Privacy, Terms, &amp; Support layouts
+                    </div>
+                </div>
+
+                <!-- Bento Box 3: Sheetany Power -->
+                <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex flex-col justify-between hover:border-xbox-500/50 dark:hover:border-xbox-400/50 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-xbox-100 dark:bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 flex items-center justify-center mb-6 font-extrabold text-xl">03</div>
+                        <h3 class="text-2xl font-bold mb-4">Sheetany Integration</h3>
+                        <p class="text-slate-600 dark:text-slate-300 font-light leading-relaxed">
+                            Upgrade your experience with Sheetany access to seamlessly power infinite blogs, dynamic affiliate tables, product roadmap status indicators, custom lists, and interactive client support pages powered entirely by custom tabular data feeds.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 text-xs text-xbox-600 dark:text-xbox-400 font-bold">
+                        → Manage content via Google Sheets
+                    </div>
+                </div>
+
+                <!-- Bento Box 4: Xbox Green Theme Native Toggle -->
+                <div class="md:col-span-2 p-8 rounded-3xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex flex-col justify-between hover:border-xbox-500/50 dark:hover:border-xbox-400/50 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-xbox-100 dark:bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 flex items-center justify-center mb-6 font-extrabold text-xl">04</div>
+                        <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                            <h3 class="text-2xl font-bold">Designed for High Performance</h3>
+                            <span class="px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-300">Fast &amp; Responsive</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 font-light leading-relaxed">
+                            No heavy frameworks. Every Xsite generates clean Tailwind CSS code with lightning-fast CDN loads, structured natively for light and dark dynamic toggles. Beautiful, bold design elements, interactive layouts, high contrast presentation, and moonshot aesthetics to draw high attention to your product details.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                        <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl">
+                            <div class="text-lg font-bold text-slate-800 dark:text-white">100/100</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">PageSpeed</div>
+                        </div>
+                        <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl">
+                            <div class="text-lg font-bold text-slate-800 dark:text-white">&lt; 100ms</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">TTR</div>
+                        </div>
+                        <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl">
+                            <div class="text-lg font-bold text-slate-800 dark:text-white">0kb</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Server Cost</div>
+                        </div>
+                        <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl">
+                            <div class="text-lg font-bold text-slate-800 dark:text-white">Yes</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">SSL Native</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Workspace Preview & Auxiliary Pages Hub -->
+    <section id="interactive-demo" class="py-20 bg-slate-100/50 dark:bg-slate-950/40 border-b border-slate-200 dark:border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-12">
+                <span class="px-3 py-1 rounded-full bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 text-xs font-bold uppercase tracking-wider">Simulated Workspace</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950 dark:text-white">
+                    Explore Every Page Natively Rendered
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 font-light">
+                    Every Xsites deployment delivers not just a homepage, but a complete digital identity ecosystem. Click through the tabs below to preview the built-in pages that come pre-packaged with your project.
+                </p>
+            </div>
+
+            <!-- Custom Interactive Tab System Container -->
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-xl" id="demo-tab-system">
+                
+                <!-- Tab Headers -->
+                <div class="flex flex-wrap border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 overflow-x-auto">
+                    <button onclick="switchTab('tab-products')" id="btn-tab-products" class="tab-button flex items-center gap-2 px-6 py-4 text-sm font-bold border-b-2 border-xbox-500 text-xbox-600 dark:text-xbox-400 transition-all duration-150">
+                        📦 Products Matrix
+                    </button>
+                    <button onclick="switchTab('tab-blog')" id="btn-tab-blog" class="tab-button flex items-center gap-2 px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border-b-2 border-transparent hover:text-slate-950 dark:hover:text-white transition-all duration-150">
+                        ✍️ Dynamic Blog Engine
+                    </button>
+                    <button onclick="switchTab('tab-terms')" id="btn-tab-terms" class="tab-button flex items-center gap-2 px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border-b-2 border-transparent hover:text-slate-950 dark:hover:text-white transition-all duration-150">
+                        ⚖️ Legal &amp; Terms
+                    </button>
+                    <button onclick="switchTab('tab-privacy')" id="btn-tab-privacy" class="tab-button flex items-center gap-2 px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border-b-2 border-transparent hover:text-slate-950 dark:hover:text-white transition-all duration-150">
+                        🛡️ Privacy Policy
+                    </button>
+                    <button onclick="switchTab('tab-contact')" id="btn-tab-contact" class="tab-button flex items-center gap-2 px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border-b-2 border-transparent hover:text-slate-950 dark:hover:text-white transition-all duration-150">
+                        📞 Contact &amp; Support
+                    </button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="p-6 sm:p-8 min-h-[400px]">
+                    
+                    <!-- Tab 1: Products Matrix (Active) -->
+                    <div id="tab-products" class="tab-content block space-y-6">
+                        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 border-b border-slate-100 dark:border-slate-800 pb-4">
+                            <div>
+                                <h4 class="text-xl font-bold">Xsites Integrated Product Suites</h4>
+                                <p class="text-sm text-slate-500">Ready-built template blocks for digital, physical, or coaching sales.</p>
+                            </div>
+                            <span class="px-3 py-1 rounded bg-xbox-100 dark:bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 text-xs font-bold uppercase tracking-widest">Included Out Of Box</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="p-5 border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50/50 dark:bg-slate-950/40">
+                                <span class="text-2xl">📦</span>
+                                <h5 class="text-base font-bold mt-3 mb-1">Digital Products / SaaS</h5>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Complete dynamic landing arrays with checkout webhook configurations built directly in to deliver access instantly.</p>
+                                <span class="text-xs font-bold text-xbox-500 dark:text-xbox-400">Deploy ready &rarr;</span>
+                            </div>
+                            <div class="p-5 border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50/50 dark:bg-slate-950/40">
+                                <span class="text-2xl">👚</span>
+                                <h5 class="text-base font-bold mt-3 mb-1">Physical Goods Integration</h5>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">E-commerce elements connected to lightweight checkout buttons. Display inventory with pure ease.</p>
+                                <span class="text-xs font-bold text-xbox-500 dark:text-xbox-400">Deploy ready &rarr;</span>
+                            </div>
+                            <div class="p-5 border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50/50 dark:bg-slate-950/40">
+                                <span class="text-2xl">🧠</span>
+                                <h5 class="text-base font-bold mt-3 mb-1">Coaching &amp; Professional Services</h5>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Calendar configurations, consultation appointment bookings, and lead captures built natively into your foundation.</p>
+                                <span class="text-xs font-bold text-xbox-500 dark:text-xbox-400">Deploy ready &rarr;</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Dynamic Blog Engine -->
+                    <div id="tab-blog" class="tab-content hidden space-y-6">
+                        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 border-b border-slate-100 dark:border-slate-800 pb-4">
+                            <div>
+                                <h4 class="text-xl font-bold">Sheetany-Powered Content Hub</h4>
+                                <p class="text-sm text-slate-500">Run a professional, search-optimized blog without databases.</p>
+                            </div>
+                            <span class="px-3 py-1 rounded bg-amber-100 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 text-xs font-bold uppercase tracking-widest">Optional Add-on</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-6 border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50/50 dark:bg-slate-950/40 flex flex-col justify-between">
+                                <div class="space-y-2">
+                                    <span class="text-xs font-semibold text-xbox-500">SEO OPTIMIZED &bull; 2026 UPDATE</span>
+                                    <h5 class="text-lg font-bold">Why Solo Operators Choose Static Over Complex WordPress</h5>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                                        Learn how launching static sites directly connected to free API structures drives 100/100 Core Web Vitals performance and eliminates server crashes...
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-3 pt-4 border-t border-slate-200/50 dark:border-slate-800 mt-4">
+                                    <span class="w-8 h-8 rounded-full bg-slate-300 dark:bg-slate-700 text-[10px] flex items-center justify-center font-bold">XF</span>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-800 dark:text-slate-200">Written by Xsites Team</p>
+                                        <p class="text-[10px] text-slate-400">4 min read</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50/50 dark:bg-slate-950/40 flex flex-col justify-between">
+                                <div class="space-y-2">
+                                    <span class="text-xs font-semibold text-xbox-500">SOLOPRENEUR INSIGHTS</span>
+                                    <h5 class="text-lg font-bold">Stop Overcomplicating Your Minimum Viable Infrastructure</h5>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                                        The dirty truth behind high host bills: Solo builders pay for capacity they do not require. Discover the power of serverless static deployment...
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-3 pt-4 border-t border-slate-200/50 dark:border-slate-800 mt-4">
+                                    <span class="w-8 h-8 rounded-full bg-slate-300 dark:bg-slate-700 text-[10px] flex items-center justify-center font-bold">XF</span>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-800 dark:text-slate-200">Written by Founder</p>
+                                        <p class="text-[10px] text-slate-400">6 min read</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Terms of Use -->
+                    <div id="tab-terms" class="tab-content hidden space-y-4">
+                        <h4 class="text-xl font-bold border-b border-slate-100 dark:border-slate-800 pb-2">Xsites Standard Usage Agreement &amp; Terms</h4>
+                        <div class="prose prose-sm dark:prose-invert max-w-none text-slate-500 dark:text-slate-400 text-xs leading-relaxed space-y-3 max-h-[300px] overflow-y-auto pr-2">
+                            <p class="font-semibold text-slate-800 dark:text-slate-200">Effective: February 2026</p>
+                            <p>
+                                Welcome to Xstream Flex ("Platform", "Xsites", "we", "us", or "our"). By accessing or utilizing the Xsites service, you establish a binding legal agreement to comply with and be governed by the structural provisions detailed herein.
+                            </p>
+                            <p><strong>1. Intellectual Property &amp; Code Ownership</strong></p>
+                            <p>
+                                Every page or platform constructed utilizing Xsites belongs unconditionally to the user. All compiled code structural sequences deployed to GitHub Pages remain the sovereign digital properties of the user. Xstream Flex claims zero intellectual rights, royalty demands, or administrative ownership on properties published using our infrastructure models.
+                            </p>
+                            <p><strong>2. Usage Credits &amp; Allowances</strong></p>
+                            <p>
+                                Under the 15 Genesis Site Credits program, users are granted unique design compile instances. Active usage tracking registers deployed pages. Unused credits retain perpetual life in your balance sheets.
+                            </p>
+                            <p><strong>3. Dynamic Platform Limits</strong></p>
+                            <p>
+                                System utilization must not include high-risk spam actions, hostile network scripts, or malicious content farms. We reserve administrative suspension rights for platforms acting in clear violation of these core values.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Privacy Policy -->
+                    <div id="tab-privacy" class="tab-content hidden space-y-4">
+                        <h4 class="text-xl font-bold border-b border-slate-100 dark:border-slate-800 pb-2">Data Privacy &amp; Global Compliance Framework</h4>
+                        <div class="prose prose-sm dark:prose-invert max-w-none text-slate-500 dark:text-slate-400 text-xs leading-relaxed space-y-3 max-h-[300px] overflow-y-auto pr-2">
+                            <p class="font-semibold text-slate-800 dark:text-slate-200">Last Revised: February 2026</p>
+                            <p>
+                                This Privacy Framework clarifies how Xsites handles and guarantees security relative to your system tokens, GitHub access tokens, metadata configurations, and user analytics.
+                            </p>
+                            <p><strong>1. Security of Connected Tokens</strong></p>
+                            <p>
+                                Because we connect directly to your personal GitHub accounts via Secure OAuth mechanisms, your credentials remain fully isolated. We never view, keep, or write to your private code databases beyond the explicit structural parameters needed to create and maintain your public Xsites directory.
+                            </p>
+                            <p><strong>2. User Tracking and Cookies</strong></p>
+                            <p>
+                                We run minimal, strictly required tracking to provide reliable session capabilities. No sales of consumer patterns to target agencies. We utilize safe cloud platforms in complete lockstep with modern European GDPR standards.
+                            </p>
+                            <p><strong>3. Open API Transparency</strong></p>
+                            <p>
+                                Code structural layers and generated public landing configurations can be reviewed openly by your development teams at any time. Transparency is the bedrock of credibility.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Tab 5: Contact & Support Page -->
+                    <div id="tab-contact" class="tab-content hidden space-y-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div class="space-y-4">
+                                <h4 class="text-xl font-bold">Have an Idea? Contact Us Instantly</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 font-light leading-relaxed">
+                                    Need help with custom routing, domain configurations, or API integrations? Drop us a line. Our priority response team typically responds within 3 hours.
+                                </p>
+                                <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                    <p class="flex items-center gap-2"><strong class="text-slate-800 dark:text-slate-200">Email:</strong> support@xstreamflex.com</p>
+                                    <p class="flex items-center gap-2"><strong class="text-slate-800 dark:text-slate-200">HQ:</strong> Orbit Command &bull; Seattle, WA</p>
+                                    <p class="flex items-center gap-2"><strong class="text-slate-800 dark:text-slate-200">Response Rate:</strong> 100% on Discord &amp; Inbox channels</p>
+                                </div>
+                            </div>
+                            <!-- Live Interactive Contact Form Inside Hub -->
+                            <form onsubmit="handleFormSubmit(event)" class="space-y-4 bg-slate-50 dark:bg-slate-950 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase text-slate-500 tracking-wider mb-1">Your Name</label>
+                                    <input type="text" placeholder="John Doe" required class="w-full px-3 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-xs focus:ring-1 focus:ring-xbox-500 focus:outline-none dark:text-white" />
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase text-slate-500 tracking-wider mb-1">Your Email</label>
+                                    <input type="email" placeholder="john@yourbrand.com" required class="w-full px-3 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-xs focus:ring-1 focus:ring-xbox-500 focus:outline-none dark:text-white" />
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase text-slate-500 tracking-wider mb-1">Brief Description of Idea</label>
+                                    <textarea rows="3" placeholder="SaaS for custom marketing assets..." required class="w-full px-3 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-xs focus:ring-1 focus:ring-xbox-500 focus:outline-none dark:text-white"></textarea>
+                                </div>
+                                <button type="submit" class="w-full py-2.5 bg-xbox-500 hover:bg-xbox-600 text-white font-bold rounded-lg text-xs tracking-wider transition-colors glow-green">
+                                    Send Connection Request
+                                </button>
+                                <p id="form-feedback" class="text-[10px] text-emerald-500 font-bold text-center hidden">✓ Message intercepted! Our crew will sync shortly.</p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pricing & Checkout Configurator (Interactive Cash Machine) -->
+    <section id="pricing" class="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Matrix Introduction Header -->
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <span class="px-3 py-1 rounded-full bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 text-xs font-bold uppercase tracking-wider">2026 Pricing &amp; Packaging</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950 dark:text-white">
+                    Supercharge Your Launch Setup Instantly
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 font-light">
+                    Select a core deployment program below, check the desired system add-ons to eliminate tech headaches, and watch your comprehensive checkout summary configure dynamically.
+                </p>
+            </div>
+
+            <!-- Custom Pricing Matrix Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Pricing Left Column: The 3 Core Plans -->
+                <div class="lg:col-span-8 space-y-6">
+                    
+                    <!-- Main LTD Card: High Contrast Highlight -->
+                    <div id="plan-ltd" onclick="selectPlan('LTD', 99)" class="plan-card cursor-pointer p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-xbox-50/50 to-emerald-50/50 dark:from-slate-900 dark:to-slate-950 border-2 border-xbox-500 relative shadow-lg hover:shadow-xl transition-all duration-200">
+                        <!-- Best Value tag -->
+                        <span class="absolute top-0 right-8 -translate-y-1/2 px-4 py-1 rounded-full bg-xbox-500 text-white text-xs font-bold tracking-widest uppercase glow-green">
+                            Founder's LTD Launch Phase Only
+                        </span>
+                        
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+                                    🚀 The Founder's Lifetime Deal
+                                </h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">High-value Lifetime Bucket protecting your API margins.</p>
+                            </div>
+                            <div class="text-left sm:text-right">
+                                <div class="text-4xl font-extrabold text-xbox-500">$99</div>
+                                <div class="text-xs font-bold text-slate-400">One-Time Payment</div>
+                            </div>
+                        </div>
+
+                        <!-- Included Features Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 pt-6 border-t border-slate-200 dark:border-slate-800 text-sm">
+                            <div class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                                <span class="text-xbox-500 font-bold">&#10004;</span> <strong>15 Genesis Site Credits</strong> (Never expire)
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                                <span class="text-xbox-500 font-bold">&#10004;</span> Unlimited Preview Compiles
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                                <span class="text-xbox-500 font-bold">&#10004;</span> 1-Click GitHub Deploy (Free forever hosting)
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                                <span class="text-xbox-500 font-bold">&#10004;</span> Dynamic Light/Dark Theme Support
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-700 dark:text-slate-300 sm:col-span-2">
+                                <span class="text-xbox-500 font-bold">&#10004;</span> Active Compliance Pages Generator (Privacy &amp; Terms)
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subscription Alternatives Divider / Indicator -->
+                    <div class="flex items-center gap-4 text-xs font-bold text-slate-400 dark:text-slate-600 uppercase tracking-widest py-2">
+                        <div class="h-px bg-slate-200 dark:bg-slate-800 flex-grow"></div>
+                        <span>Or Recurring Subscriptions</span>
+                        <div class="h-px bg-slate-200 dark:bg-slate-800 flex-grow"></div>
+                    </div>
+
+                    <!-- Recurring Subscription Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Tier 1: Solo Creator -->
+                        <div id="plan-solo" onclick="selectPlan('Solo', 12)" class="plan-card cursor-pointer p-6 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-md transition-all duration-200">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h4 class="text-lg font-bold text-slate-800 dark:text-white">Solo Creator</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Quickly spin up &amp; validate ideas.</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-extrabold text-slate-800 dark:text-white">$12<span class="text-xs font-normal">/mo</span></div>
+                                    <div class="text-[9px] font-bold text-emerald-500">Billed Annually ($144)</div>
+                                </div>
+                            </div>
+                            <div class="space-y-2 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs">
+                                <p class="flex items-center gap-2"><span class="text-xbox-500 font-bold">&#10004;</span> <strong>3 Genesis Site Deploys</strong> / mo</p>
+                                <p class="flex items-center gap-2"><span class="text-xbox-500 font-bold">&#10004;</span> Unlimited Preview Sandbox</p>
+                                <p class="flex items-center gap-2"><span class="text-xbox-500 font-bold">&#10004;</span> 1-Click GitHub Pages connection</p>
+                                <p class="flex items-center gap-2"><span class="text-xbox-500 font-bold">&#10004;</span> Bento-Grid Tailwind layouts</p>
+                            </div>
+                        </div>
+
+                        <!-- Tier 2: Agency & Reseller -->
+                        <div id="plan-agency" onclick="selectPlan('Agency', 35)" class="plan-card cursor-pointer p-6 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-md transition-all duration-200">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h4 class="text-lg font-bold text-slate-800 dark:text-white">Agency &amp; Reseller</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Vibe code high paying sites fast.</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-extrabold text-slate-800 dark:text-white">$35<span class="text-xs font-normal">/mo</span></div>
+                                    <div class="text-[9px] font-bold text-emerald-500">Billed Annually ($420)</div>
+                                </div>
+                            </div>
+                            <div class="space-y-2 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs">
+                                <p class="flex items-center gap-2"><span class="text-xbox-500 font-bold">&#10004;</span> <strong>15 Genesis Site Deploys</strong> / mo</p>
+                                <p class="flex items-center gap-2"><span class="text-xbox-500 font-bold">&#10004;</span> Priority Discord Support Channel</p>
+                                <p class="flex items-center gap-2"><span class="text-xbox-500 font-bold">&#10004;</span> Whitelabel Raw Code Exporting</p>
+                                <p class="flex items-center gap-2"><span class="text-xbox-500 font-bold">&#10004;</span> REST Developer API Access</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Pricing Right Column: Dynamic Order Configurator -->
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="p-6 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl space-y-6 relative overflow-hidden">
+                        
+                        <!-- Mini Space decoration -->
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-xbox-500/10 rounded-full blur-2xl"></div>
+
+                        <div class="border-b border-slate-800 pb-4">
+                            <h4 class="text-lg font-bold tracking-tight">Configure Your Order</h4>
+                            <p class="text-xs text-slate-400 mt-1">Raise your margins &amp; skip domain headaches</p>
+                        </div>
+
+                        <!-- Upsell Add-ons checkboxes -->
+                        <div class="space-y-4">
+                            
+                            <!-- Addon 1: Managed Hosting DNS Setup -->
+                            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-xbox-500/40 transition flex items-start gap-3">
+                                <input type="checkbox" id="addon-dns" onchange="toggleAddon('dns', 149)" class="mt-1 h-4.5 w-4.5 rounded border-slate-700 bg-slate-900 text-xbox-500 focus:ring-xbox-500" />
+                                <div class="flex-grow select-none">
+                                    <label for="addon-dns" class="block text-xs font-extrabold text-slate-100 cursor-pointer">
+                                        Xsites Pro Managed Hosting (DNS &amp; SSL)
+                                    </label>
+                                    <p class="text-[10px] text-slate-400 mt-1 leading-relaxed">
+                                        We map nameservers, configure custom SSL, &amp; setup Cloudflare/Namecheap API routes automatically.
+                                    </p>
+                                    <span class="text-xs font-bold text-xbox-400 mt-1.5 inline-block">+$149 Lifetime (3 Domains)</span>
+                                </div>
+                            </div>
+
+                            <!-- Addon 2: Pro Business Email Suite -->
+                            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-xbox-500/40 transition flex items-start gap-3">
+                                <input type="checkbox" id="addon-email" onchange="toggleAddon('email', 79)" class="mt-1 h-4.5 w-4.5 rounded border-slate-700 bg-slate-900 text-xbox-500 focus:ring-xbox-500" />
+                                <div class="flex-grow select-none">
+                                    <label for="addon-email" class="block text-xs font-extrabold text-slate-100 cursor-pointer">
+                                        Pro Business Email Routing Suite
+                                    </label>
+                                    <p class="text-[10px] text-slate-400 mt-1 leading-relaxed">
+                                        Skip gmail.com pitches. Custom forwarding (e.g., hello@domain.com) with preconfigured active SPF, DKIM, DMARC.
+                                    </p>
+                                    <span class="text-xs font-bold text-xbox-400 mt-1.5 inline-block">+$79 One-Time Setup</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Live Interactive Bill Summary -->
+                        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3 font-mono text-xs">
+                            <div class="flex justify-between items-center text-slate-400">
+                                <span>Base Plan:</span>
+                                <span id="summary-plan-price">$99.00</span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-400 hidden" id="row-dns-addon">
+                                <span>DNS &amp; SSL Hosting Setup:</span>
+                                <span>+$149.00</span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-400 hidden" id="row-email-addon">
+                                <span>Email Forward Routing:</span>
+                                <span>+$79.00</span>
+                            </div>
+                            <div class="border-t border-slate-800 pt-3 flex justify-between items-center font-bold text-sm text-white">
+                                <span>Total Investment:</span>
+                                <span id="summary-total-price" class="text-xbox-400 text-lg">$99.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Final Checkout CTAs -->
+                        <div class="space-y-3">
+                            <button onclick="simulateCheckout()" class="w-full py-4 bg-xbox-500 hover:bg-xbox-600 text-white font-extrabold rounded-2xl tracking-wide transition shadow-lg hover:shadow-xbox-500/30 text-center text-sm glow-green">
+                                Instantly Acquire Access Now
+                            </button>
+                            <p class="text-center text-[10px] text-slate-400">
+                                🔒 Secure bank-grade stripe encryption protocol. <br>30-day structural guarantee. Refund if not deployed.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testimonials / Proof of Velocity -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <span class="text-xs uppercase tracking-widest font-extrabold text-xbox-500">Voices of Velocity</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950 dark:text-white">
+                    Built for Builders who "Vibe Code"
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 font-light">
+                    See how solo operators are launching concepts at speed, getting complete ownership of their digital domains, and leaving bloated SaaS platforms behind.
+                </p>
+            </div>
+
+            <!-- Grid of Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                    <p class="text-slate-600 dark:text-slate-300 text-sm font-light leading-relaxed mb-6">
+                        "I vibe-coded a full fitness habit app with Claude on a Sunday afternoon, but realized I needed a high-credibility, compliance-complete site to host it. Xsites generated my main page, terms of use, privacy policy, and pushed everything to my GitHub in seconds. I'm hosted for $0 ongoing."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-xbox-500">MK</span>
+                        <div>
+                            <h4 class="text-sm font-bold">Marcus K.</h4>
+                            <p class="text-xs text-slate-400">Solopreneur &amp; Fitness Hacker</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                    <p class="text-slate-600 dark:text-slate-300 text-sm font-light leading-relaxed mb-6">
+                        "I used to spend half my development budget setting up nameservers, custom emails, and legal parameters just to see if people wanted my ideas. Xstream Flex handles the exact structural items that outprice solo builders. I locked in the $99 Founder's LTD instantly."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-xbox-500">TD</span>
+                        <div>
+                            <h4 class="text-sm font-bold">Tracey D.</h4>
+                            <p class="text-xs text-slate-400">Indie Agency Operator</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                    <p class="text-slate-600 dark:text-slate-300 text-sm font-light leading-relaxed mb-6">
+                        "The Sheetany integrations are incredible. Being able to run my complete client roadmap, update pricing dynamically, and push new legal versions directly from spreadsheets without touch-editing raw files is a complete game changer."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-xbox-500">JL</span>
+                        <div>
+                            <h4 class="text-sm font-bold">James L.</h4>
+                            <p class="text-xs text-slate-400">Digital Product Merchant</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions Accordion -->
+    <section id="faq" class="py-20 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-900 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center space-y-4 mb-12">
+                <span class="px-3 py-1 rounded-full bg-xbox-500/10 text-xbox-600 dark:text-xbox-400 text-xs font-bold uppercase tracking-wider">Common Questions</span>
+                <h2 class="text-3xl font-extrabold tracking-tight text-slate-950 dark:text-white">
+                    FAQ - The Foundation Explained
+                </h2>
+            </div>
+
+            <!-- Accordion Interface -->
+            <div class="space-y-4">
+                
+                <!-- Question 1 -->
+                <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-950">
+                    <button onclick="toggleAccordion('faq-1')" class="w-full flex items-center justify-between p-6 text-left font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:bg-slate-100/50 dark:hover:bg-slate-900/40 transition">
+                        <span>Who actually owns the code generated by Xsites?</span>
+                        <span class="text-xbox-500 dark:text-xbox-400 font-extrabold text-lg" id="faq-1-icon">+</span>
+                    </button>
+                    <div id="faq-1" class="hidden px-6 pb-6 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-900">
+                        You do, completely. Every page we build is outputted straight to your personal Github, which you keep. It belongs directly to your assets folder. If you ever decide to sever relationships with Xstream Flex, your sites remain online, running 100% free on GitHub Pages.
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-950">
+                    <button onclick="toggleAccordion('faq-2')" class="w-full flex items-center justify-between p-6 text-left font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:bg-slate-100/50 dark:hover:bg-slate-900/40 transition">
+                        <span>How do the Genesis Site Credits work?</span>
+                        <span class="text-xbox-500 dark:text-xbox-400 font-extrabold text-lg" id="faq-2-icon">+</span>
+                    </button>
+                    <div id="faq-2" class="hidden px-6 pb-6 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-900">
+                        A Genesis Credit is charged when you initiate a structural generation that pushes a live, brand-new site directly to your GitHub repository. Site preview compiles are unlimited. For the $99 Founder's LTD, you get 15 Genesis Credits to generate 15 separate digital business identities that do not expire.
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-950">
+                    <button onclick="toggleAccordion('faq-3')" class="w-full flex items-center justify-between p-6 text-left font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:bg-slate-100/50 dark:hover:bg-slate-900/40 transition">
+                        <span>What is Sheetany and how does it interface with Xsites?</span>
+                        <span class="text-xbox-500 dark:text-xbox-400 font-extrabold text-lg" id="faq-3-icon">+</span>
+                    </button>
+                    <div id="faq-3" class="hidden px-6 pb-6 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-900">
+                        Sheetany is our add-on solution designed to populate landing pages with structured data feeds. Connecting a Google sheet allows you to handle infinite product listings, write blogs, or modify contact information without touching any HTML templates. Perfect for non-technical clients!
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-950">
+                    <button onclick="toggleAccordion('faq-4')" class="w-full flex items-center justify-between p-6 text-left font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:bg-slate-100/50 dark:hover:bg-slate-900/40 transition">
+                        <span>What is the "vibe code" moonshot concept?</span>
+                        <span class="text-xbox-500 dark:text-xbox-400 font-extrabold text-lg" id="faq-4-icon">+</span>
+                    </button>
+                    <div id="faq-4" class="hidden px-6 pb-6 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-900">
+                        Vibe coding represents the modern movement of shipping software utilizing AI generation tools like Claude, ChatGPT, or v0 on the fly. Solopreneurs write dynamic applications rapidly but lack professional presentation layers to deliver. Xstream Flex fills this void, offering speed, structure, and holistic options in a single hub.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Footer Section -->
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900 mt-auto transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+                
+                <!-- Footer Identity -->
+                <div class="md:col-span-4 space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-xbox-500 text-white flex items-center justify-center font-bold">
+                            X
+                        </div>
+                        <span class="text-lg font-bold tracking-tight text-white">Xstream Flex</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Filling the void for solo builders. Fast execution without teams or expensive budgets. Deploying professional-grade first impressions, every single time.
+                    </p>
+                    <div class="flex items-center space-x-4 pt-2">
+                        <!-- Github Link -->
+                        <a href="https://github.com" class="hover:text-xbox-500 text-slate-500 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                        </a>
+                        <!-- Twitter/X Link -->
+                        <a href="https://x.com" class="hover:text-xbox-500 text-slate-500 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer Navigation Matrix Links -->
+                <div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+                    
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Launch Products</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a onclick="switchTab('tab-products'); scrollToDemo()" class="hover:text-white cursor-pointer transition">Xsites Portal</a></li>
+                            <li><a onclick="switchTab('tab-blog'); scrollToDemo()" class="hover:text-white cursor-pointer transition">Sheetany Core</a></li>
+                            <li><a href="#pricing" class="hover:text-white transition">Founder's LTD Spot</a></li>
+                            <li><a href="#about" class="hover:text-white transition">SaaS Architectures</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Core Platform Documentation</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a onclick="switchTab('tab-terms'); scrollToDemo()" class="hover:text-white cursor-pointer transition">Terms of Use (terms.html)</a></li>
+                            <li><a onclick="switchTab('tab-privacy'); scrollToDemo()" class="hover:text-white cursor-pointer transition">Privacy &amp; Rules (privacy.html)</a></li>
+                            <li><a onclick="switchTab('tab-contact'); scrollToDemo()" class="hover:text-white cursor-pointer transition">Support System</a></li>
+                            <li><a href="#about" class="hover:text-white transition">About Us (about.html)</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Latest Insights</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a onclick="switchTab('tab-blog'); scrollToDemo()" class="hover:text-white cursor-pointer transition">The "Vibe Coding" Era</a></li>
+                            <li><a onclick="switchTab('tab-blog'); scrollToDemo()" class="hover:text-white cursor-pointer transition">Indie Dev Tools</a></li>
+                            <li><a onclick="switchTab('tab-blog'); scrollToDemo()" class="hover:text-white cursor-pointer transition">GitHub Pages Routing</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright / Status bar -->
+            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                <p>&copy; 2026 Xstream Flex Inc. All digital rights reserved. Crafted for solo entrepreneurs globally.</p>
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-slate-500">All Platforms Operating Normally</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Vanilla Javascript Logic System -->
+    <script>
+        // ----------------------------------------------------
+        // Theme Toggle Controller (Sun / Moon)
+        // ----------------------------------------------------
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('theme-toggle-sun');
+        const moonIcon = document.getElementById('theme-toggle-moon');
+
+        // Check user preferences
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            // Toggle icons
+            sunIcon.classList.toggle('hidden');
+            moonIcon.classList.toggle('hidden');
+
+            // If is dark mode, set light mode
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // ----------------------------------------------------
+        // Interactive Workspace Tab Controller
+        // ----------------------------------------------------
+        function switchTab(tabId) {
+            // Hide all tab contents
+            const contents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < contents.length; i++) {
+                contents[i].classList.add('hidden');
+                contents[i].classList.remove('block');
+            }
+
+            // Remove active style from all tab buttons
+            const buttons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('border-xbox-500', 'text-xbox-600', 'dark:text-xbox-400');
+                buttons[i].classList.add('border-transparent', 'text-slate-600', 'dark:text-slate-400');
+            }
+
+            // Show current tab content
+            const activeTab = document.getElementById(tabId);
+            if (activeTab) {
+                activeTab.classList.remove('hidden');
+                activeTab.classList.add('block');
+            }
+
+            // Apply active styling to clicked button
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (activeBtn) {
+                activeBtn.classList.add('border-xbox-500', 'text-xbox-600', 'dark:text-xbox-400');
+                activeBtn.classList.remove('border-transparent', 'text-slate-600', 'dark:text-slate-400');
+            }
+        }
+
+        function scrollToDemo() {
+            const element = document.getElementById('interactive-demo');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // ----------------------------------------------------
+        // Interactive Pricing & Upsell Configurator
+        // ----------------------------------------------------
+        let selectedPlanName = 'LTD';
+        let basePlanPrice = 99;
+        let activeAddons = {
+            dns: 0,
+            email: 0
+        };
+
+        function selectPlan(planCode, price) {
+            selectedPlanName = planCode;
+            basePlanPrice = price;
+
+            // Update plan card styles
+            const cards = document.getElementsByClassName('plan-card');
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].classList.remove('border-2', 'border-xbox-500', 'shadow-lg');
+                cards[i].classList.add('border', 'border-slate-200', 'dark:border-slate-800');
+            }
+
+            let selectedCard;
+            if (planCode === 'LTD') {
+                selectedCard = document.getElementById('plan-ltd');
+            } else if (planCode === 'Solo') {
+                selectedCard = document.getElementById('plan-solo');
+            } else {
+                selectedCard = document.getElementById('plan-agency');
+            }
+
+            if (selectedCard) {
+                selectedCard.classList.remove('border', 'border-slate-200', 'dark:border-slate-800');
+                selectedCard.classList.add('border-2', 'border-xbox-500', 'shadow-lg');
+            }
+
+            updateTotalBill();
+        }
+
+        function toggleAddon(addonCode, addonPrice) {
+            const checkbox = document.getElementById('addon-' + addonCode);
+            const row = document.getElementById('row-' + addonCode + '-addon');
+
+            if (checkbox && checkbox.checked) {
+                activeAddons[addonCode] = addonPrice;
+                if (row) row.classList.remove('hidden');
+            } else {
+                activeAddons[addonCode] = 0;
+                if (row) row.classList.add('hidden');
+            }
+
+            updateTotalBill();
+        }
+
+        function updateTotalBill() {
+            const planPriceElement = document.getElementById('summary-plan-price');
+            const totalElement = document.getElementById('summary-total-price');
+
+            // Format Base Price
+            let baseLabel = '$' + basePlanPrice.toFixed(2);
+            if (selectedPlanName !== 'LTD') {
+                baseLabel += '/mo';
+            }
+            if (planPriceElement) planPriceElement.innerText = baseLabel;
+
+            // Calculate Total
+            let finalPrice = basePlanPrice + activeAddons.dns + activeAddons.email;
+            let totalLabel = '$' + finalPrice.toFixed(2);
+            if (selectedPlanName !== 'LTD') {
+                totalLabel += '/mo';
+            }
+            if (totalElement) totalElement.innerText = totalLabel;
+        }
+
+        function simulateCheckout() {
+            let addOnMessage = "";
+            if (activeAddons.dns > 0) addOnMessage += " + Managed Domain Routing";
+            if (activeAddons.email > 0) addOnMessage += " + Pro Business Email routing";
+            
+            alert(`🚀 Redirecting to stripe secure sandbox...\n\nPlan selected: ${selectedPlanName}\nTotal Configuration: $${(basePlanPrice + activeAddons.dns + activeAddons.email).toFixed(2)}\nAdd-ons included: ${addOnMessage || "None"}\n\nThank you for trusting Xstream Flex! Let's build your moonshot.`);
+        }
+
+        // ----------------------------------------------------
+        // Accordion Controller
+        // ----------------------------------------------------
+        function toggleAccordion(id) {
+            const accordionBody = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+
+            if (accordionBody.classList.contains('hidden')) {
+                accordionBody.classList.remove('hidden');
+                icon.innerText = '−';
+            } else {
+                accordionBody.classList.add('hidden');
+                icon.innerText = '+';
+            }
+        }
+
+        // ----------------------------------------------------
+        // Contact Form Feedback Action
+        // ----------------------------------------------------
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const feedback = document.getElementById('form-feedback');
+            if (feedback) {
+                feedback.classList.remove('hidden');
+                setTimeout(() => {
+                    feedback.classList.add('hidden');
+                    event.target.reset();
+                }, 4000);
+            }
+        }
+    </script>
+</body>
+</html>
